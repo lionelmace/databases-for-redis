@@ -22,21 +22,21 @@ The _Scale Resources_ panel shows the current size and resource allocation for y
 
 **Storage** - Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Your data is replicated across two data members in the Redis cluster, so the total amount of storage you use is approximately twice the size of your data set.
 
-The minimum storage of a Redis deployment is 2048 MB, adjustable in step sizes of 512 MB. This equates to 1024 MB per member with 256 MB increments available.
+The minimum storage of a Redis deployment is 2048 MB, adjustable in step sizes of 1024 MB. This equates to an initial size of 1024 MB per member with 512 MB increments available.
 
 You cannot scale down storage. If your data set size has decreased, you can recover space by backing up and restoring to a new deployment.
 {: .tip} 
 
 **Memory** - If you find that your queries and database activity suffer from performance issues due to a lack of memory, you can scale the amount of RAM allocated to your service. Your Redis deployment runs with two members in a cluster, so the amount of memory you allocate to the service is split between both members. Adding memory to the total allocation adds memory to both members equally.
 
-The minimum RAM for a Redis deployment is 2048 MB, adjustable in step sizes of 512 MB.  This equates to 1024 MB per member with 256 MB increments available.
+The minimum RAM for a Redis deployment is 2048 MB, adjustable in step sizes of 256 MB.  This equates an initial allocation of 1028 MB per member with 128 MB increments available.
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
 
 ### Scaling via the UI
 
-Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
+Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI currently uses a coarser-grained resolution than is available via the CLI or API. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
 
 ### Scaling via the {{site.data.keyword.cloud_notm}} CLI cloud databases plug-in
 
