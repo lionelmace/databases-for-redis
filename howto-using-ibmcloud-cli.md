@@ -47,7 +47,7 @@ Or
 ibmcloud cdb cxn NewRedis -s
 ```
 
-The command prompts for the admin password and then runs the `redli` command line client to connect to the database. For more information on connecting to Redis directly, see the [Connecting as an Admin](./admin-connecting) page.
+The command prompts for the admin password and then runs the `redli` command line client to connect to the database. For more information on connecting to Redis directly, see the [connecting with a command line client](./connecting-cli-client.html) page.
 
 ## The {{site.data.keyword.cloud_notm}} CLI and IAM
 

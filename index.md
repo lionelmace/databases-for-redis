@@ -30,7 +30,7 @@ The command line interface for {{site.data.keyword.databases-for-redis}} is the 
 
 {{site.data.keyword.databases-for-redis}} is an {{site.data.keyword.cloud_notm}} service. Provisioning and account management is handled through your {{site.data.keyword.cloud_notm}} account. If you already have an account, you can provision {{site.data.keyword.databases-for-redis}} from the [{{site.data.keyword.cloud_notm}} catalog](https://console.{DomainName}/catalog/services/databases-for-redis).
 
-For detailed provisioning information, including {{site.data.keyword.cloud_notm} CLI instructions, see the [Provisioning](./howto-provisioning.html) page.
+For detailed provisioning information, including {{site.data.keyword.cloud_notm}} CLI instructions, see the [Provisioning](./howto-provisioning.html) page.
 
 If you don't yet have an {{site.data.keyword.cloud_notm}} account, sign up on the [registration](https://console.{DomainName}/registration/) page.
 ]
