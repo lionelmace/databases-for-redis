@@ -40,7 +40,7 @@ You have to set the admin password before you connect to the database. For more 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating the client connection. For example, to connect to a deployment named  "NewRedis", use the following command.
 
 ```
-ibmcloud cdb deployment-connections NewRedis -start
+ibmcloud cdb deployment-connections NewRedis --start
 ```
 Or
 ```
