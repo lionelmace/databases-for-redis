@@ -16,7 +16,7 @@ lastupdated: "2018-09-27"
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-redis_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your Redis databases, you can skip to [setting your administrator password](./admin-password.html) and then start using a [command line tool to connect](./connecting-cli-client.html).
+If you have already created your deployment and just want to connect to your Redis databases, you can skip to [setting your administrator password](https://console.bluemix.net/docs/services/databases-for-redis/howto-admin-password.html) and then start using a [command line tool to connect](https://console.bluemix.net/docs/services/databases-for-redis/connecting-cli-client.html).
 {: .tip}
 
 ## Before you begin
@@ -171,7 +171,7 @@ npm start
 
 The app is now running at http://localhost:8080. You can add words and definitions to your {{site.data.keyword.databases-for-redis}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
-For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](./connecting-external.html#using-service-credentials).
+For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](https://console.bluemix.net/docs/services/databases-for-redis/connecting-external.html#using-service-credentials).
 
 ## Next steps
 
@@ -179,9 +179,9 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.databases-for-redis}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](./dashboard-overview.html)
-- [Backups](./dashboard-backups.html)
-- [Settings](./dashboard-settings.html)
+- [Dashboard Overview](https://console.bluemix.net/docs/services/databases-for-redis/dashboard-overview.html)
+- [Backups](https://console.bluemix.net/docs/services/databases-for-redis/dashboard-backups.html)
+- [Settings](https://console.bluemix.net/docs/services/databases-for-redis/dashboard-settings.html)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/databases-for-redis-signup

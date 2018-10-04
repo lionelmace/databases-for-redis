@@ -16,10 +16,10 @@ lastupdated: "2018-09-27"
 
 The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username and password to connect and issue commands. The username for Redis is always "admin".
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./admin-password.html) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./howto-admin-password.html) page.
 {: .tip}
 
-The simplest way to retrieve connection information is from the [cloud databases plug-in](./working-cli.html#the-cloud-databases-plugin). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for your deployment. For example, to retrieve a connection string for a deployment named  "NewRedis", use the following command.
+The simplest way to retrieve connection information is from the [cloud databases plug-in](./howto-using-ibmcloud-cli.html). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for your deployment. For example, to retrieve a connection string for a deployment named  "NewRedis", use the following command.
 
 ```
 ibmcloud cdb deployment-connections NewRedis

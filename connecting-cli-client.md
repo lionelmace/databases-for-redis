@@ -28,9 +28,9 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
 
 ## Admin Connection Strings
 
-{{site.data.keyword.databases-for-redis_full}} provides connection strings specifically for CLI clients. They contain all the relevant pieces of connection information. You can get the admin connection strings by following the steps in the [Getting your Connection Strings](./working-connection-strings) page. 
+{{site.data.keyword.databases-for-redis_full}} provides connection strings specifically for CLI clients. They contain all the relevant pieces of connection information. You can get the admin connection strings by following the steps in the [Getting your Connection Strings](./howto-getting-connection-strings.html) page. 
 
-A [table](./working-connection-strings#the-cli-section) with a breakdown of all the CLI connection information is also available.
+A [table](./howto-getting-connection-strings.html#the-cli-section) with a breakdown of all the CLI connection information is also available.
 
 You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./admin-password.html) page.
 {: .tip}
@@ -67,7 +67,7 @@ For more information, see the [GitHub repo](https://github.com/IBM-Cloud/redli).
 1. Install `stunnel`. Use your package manager for Linux, Homebrew for Mac, or [download](https://www.stunnel.org/downloads.html) the appropriate package for your platform.
 
 2. Grab connection information.
-   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](./working-connection-strings#the-redis-section) that is provided for connecting external applications and drivers.
+   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](./howto-getting-connection-strings.html#the-redis-section) that is provided for connecting external applications and drivers.
 
    The certificate is in the  "Base 64" field of the connection information. Copy, decode, and save the certificate to a file.
 

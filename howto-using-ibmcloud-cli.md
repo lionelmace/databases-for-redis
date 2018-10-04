@@ -29,7 +29,7 @@ Once you have the {{site.data.keyword.cloud_notm}} CLI, [login](https://console.
 
 `ibmcloud plugin install cloud-databases`
 
-Use `ibmcloud cdb help` for a list of commands and usage, or see the [documentation]() for a command reference. 
+Use `ibmcloud cdb help` for a list of commands and usage, or see the [documentation](https://console.{DomainName}/docs/databases-cli-plugin/cloud-databases-cli.html#cloud-databases-cli-plug-in) for a command reference. 
 
 ## Using the `cdb` commands
 

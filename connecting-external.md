@@ -17,9 +17,9 @@ Your applications and drivers use connection strings to make a connection to {{s
 
 ## Getting Connection Strings
 
-The easiest way to get connection strings for an application is to create a set of _Service Credentials_ specifically for your application to connect with. Doing so also returns all the connection information as JSON in a click-to-copy field. Full documentation on generating and retrieving connection strings is on the [Getting Connection Strings](./work-with-connection-strings.html) page.
+The easiest way to get connection strings for an application is to create a set of _Service Credentials_ specifically for your application to connect with. Doing so also returns all the connection information as JSON in a click-to-copy field. Full documentation on generating and retrieving connection strings is on the [Getting Connection Strings](./howto-getting-connection-strings.html) page.
 
-Other options for getting connection strings are through the [CLI cloud databases plug-in](./work-with-connection-strings.html#generating-connection-strings-from-the-command-line), and the [cloud databases API](https://pages.github.ibm.com/compose/apidocs/). A [table](./working-connection-strings#the-redis-section) with a breakdown of all the connection information is included for reference.
+A [table](./howto-getting-connection-strings#the-redis-section) with a breakdown of all the connection information is included for reference.
 
 ## Connecting with a language's client
 
@@ -45,7 +45,7 @@ All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled
 
 If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found in the [Admin - Connecting section](admin-connecting.html), where Stunnel is used to connect the `redis-cli` application.
 
-Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection. In most cases, you want to decode and save a copy of the certificate, and then provide the path to the driver. For more information, see [Using the self-signed certificate](./work-with-connection-strings.html#using-the-self-signed-certificate).
+Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection. In most cases, you want to decode and save a copy of the certificate, and then provide the path to the driver. For more information, see [Using the self-signed certificate](./howto-getting-connection-strings.html#using-the-self-signed-certificate).
 
 
 
