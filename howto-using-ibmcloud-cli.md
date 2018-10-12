@@ -40,7 +40,7 @@ Run `ibmcloud cdb help` for other commands and usage information.
 If you need to open a connection directly to your Redis, the `ibmcloud cdb deployment-connections` command handles everything that is involved in creating the client connection. For example, to connect to a deployment named  "NewRedis", use the following command.
 
 ```
-ibmcloud cdb deployment-connections NewRedis -start
+ibmcloud cdb deployment-connections NewRedis --start
 ```
 Or
 ```
