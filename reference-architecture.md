@@ -33,7 +33,7 @@ All {{site.data.keyword.databases-for-redis}} services all have encryption at re
 
 ## Portals
 
-{{site.data.keyword.databases-for-redis}} connections are managed by 2 HAProxy portals. The portals are then placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two portals behind it allows for applications to maintain connectivity if one of the portals becomes unreachable.
+{{site.data.keyword.databases-for-redis}} connections are managed by 2 HAProxy portals. The portals are then placed behind a Kubernetes endpoint. This endpoint provides the connection for your applications. Having two portals behind the endpoint allows for applications to maintain connectivity if one of the portals becomes unreachable.
 
 ### Encryption in Transit
 

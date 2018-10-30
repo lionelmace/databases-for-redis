@@ -24,15 +24,28 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
 
 ## Installing `redli`
 
-`redli` is an open source Redis command line client. It is stand-alone, mimics the redis-cli command line arguments, and adds support for TLS/SSL redis connections. It recognizes the rediss: protocol in URIs and  supports a `--tls` flag for non-URI connections. It can connect to TLS/SSL secured Redis without the need for tunnels. You can download and install it from the [releases page](https://github.com/IBM-Cloud/redli/releases). 
+`redli` is an open source Redis command line client. It is stand-alone, mimics the redis-cli command line arguments, and adds support for TLS/SSL redis connections. It recognizes the `rediss:` protocol in URIs and  supports a `--tls` flag for non-URI connections. It can connect to TLS/SSL secured Redis without the need for tunnels. You can download and install it from the [releases page](https://github.com/IBM-Cloud/redli/releases). 
 
 ## Admin Connection Strings
 
-{{site.data.keyword.databases-for-redis_full}} provides connection strings specifically for CLI clients. They contain all the relevant pieces of connection information. You can get the admin connection strings by following the steps in the [Getting your Connection Strings](./howto-getting-connection-strings.html) page. 
+Redis only supports a single-user, so you use the same credentials for all applications, including the command line clients, that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](./howto-getting-connection-strings.html) page. 
 
-A [table](./howto-getting-connection-strings.html#the-cli-section) with a breakdown of all the CLI connection information is also available.
+The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./admin-password.html) page.
+Field Name|Index|Description
+----------|-----|-----------
+`Bin`||The recommended binary to create a connection; in this case it is `redli`.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings and uses `Arguments` as command line parameters.
+`Environment`||A list of key/values you set as environment variables.
+`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
+`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
+`Certificate`|Name|The allocated name for the self-signed certificate.
+`Type`||The type of package that uses this connection information; in this case `cli`. 
+{: caption="Table 1. `redis`/`cli` connection information" caption-side="top"}
+
+* `0...` indicates that there might be one or more of these entries in an array.
+
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./howto-admin-password.html) page.
 {: .tip}
 
 ## Connecting with `redli`

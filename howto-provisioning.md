@@ -26,7 +26,7 @@ You can create a {{site.data.keyword.databases-for-redis}} service from the [{{s
 When you create the deployment from the catalog, you need to specify the following parameters.
 
 1. **The service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new database deployment.
-2. **The region** - The region in which the database deployment resides. Currently, only US-South is available.
+2. **The region** - The region in which the database deployment resides.
 3. **The database version** - The major version of the database to be created within the deployment. The latest minor version is always be used automatically. 
 
 Users can optionally set:
@@ -56,7 +56,7 @@ ibmcloud resource service-instance-create <service-name> <service-id> <service-p
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud/cli_resource_group.html#ibmcloud_resource_service_instance_create).
 
-In the specific case of creating a {{site.data.keyword.databases-for-redis}} deployment, set the service name (quote any name with spaces in it). Then, set `databases-for-redis` as the service ID. Enter `standard` for the service plan ID and `us-south` for the region.
+In the specific case of creating a {{site.data.keyword.databases-for-redis}} deployment, set the service name (quote any name with spaces in it). Then, set `databases-for-redis` as the service ID. Enter `standard` for the service plan ID and `us-south` (or your region) for the region.
 
 ```
 ibmcloud resource service-instance-create example-redis databases-for-redis standard us-south

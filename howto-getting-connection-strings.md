@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017,2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-10-29"
 ---
 
 {:new_window: target="_blank"}
@@ -55,7 +55,7 @@ Connection information also available as JSON from the cloud databases API. The 
 
 ### The Redis Section
 
-The "Redis" section contains information that is suited for applications that make connections to Redis.
+The "Redis" section contains information that is suited for your applications that make connections to Redis.
 
 Field Name|Index|Description
 ----------|-----|-----------
@@ -73,6 +73,8 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
+For more information on using this information to connect, see the [Connecting an External Application](./connecting-external.html) page.
+
 ### The CLI Section
 
 The "CLI" section contains information that is suited for command-line clients that make connections to Redis.
@@ -83,18 +85,12 @@ Field Name|Index|Description
 `Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings and uses `Arguments` as command line parameters.
 `Environment`||A list of key/values you set as environment variables.
 `Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. You need to decode the key before using it.
+`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
 `Certificate`|Name|The allocated name for the self-signed certificate.
 `Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 1. `redis`/`cli` connection information" caption-side="top"}
+{: caption="Table 2. `redis`/`cli` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-## Using the self-signed certificate
+For more information on using this information, see the [Connecting with a command line client](./connecting-cli-client) page.
 
-1. Copy the certificate information from the Base64 field of the connection information. 
-2. Decode the Base64 string into text and save it to a file. (You can use the Name that is provided or your own file name).
-
-### CLI plug-in support for the self-signed certificate
-
-You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the `ROOTCERT` environment variable.
