@@ -19,7 +19,7 @@ To create an {{site.data.keyword.databases-for-redis_full}} deployment, you need
 
 ## Using the catalog
 
-You can create a {{site.data.keyword.databases-for-redis}} service from the [{{site.data.keyword.databases-for-redis}} page](https://console.{DomainName}/catalog/services/databases-for-redis/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.databases-for-redis}} service from the [{{site.data.keyword.databases-for-redis}} page](https://{DomainName}/catalog/services/databases-for-redis/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 ![Catalog Deployment Page](images/catalog-deployment.png)
 
@@ -44,7 +44,7 @@ The database takes some time to deploy. The user is navigated back to the {{site
 
 ## Using the Command Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
 To create a {{site.data.keyword.databases-for-redis}} deployment, you use the CLI to request a service instance with a `databases-for-redis` service ID.
 

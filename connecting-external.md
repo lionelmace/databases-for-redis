@@ -45,7 +45,7 @@ Field Name|Index|Description
 
 Redis drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example,
 ```
-rediss://admin:7398b8731c075dcdf02eac76b7860f8e554a668ca8728228bf2250ac07c62310@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
+rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
 ```
 
 Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis.io site](https://redis.io/clients).

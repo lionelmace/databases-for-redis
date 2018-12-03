@@ -28,21 +28,21 @@ The {{site.data.keyword.cloud_notm}} command line interface provides in interact
 
 ## Provisioning {{site.data.keyword.databases-for-redis}}
 
-{{site.data.keyword.databases-for-redis}} is an {{site.data.keyword.cloud_notm}} service. Provisioning and account management is handled through your {{site.data.keyword.cloud_notm}} account. If you already have an account, you can provision {{site.data.keyword.databases-for-redis}} from the [{{site.data.keyword.cloud_notm}} catalog](https://console.{DomainName}/catalog/services/databases-for-redis).
+{{site.data.keyword.databases-for-redis}} is an {{site.data.keyword.cloud_notm}} service. Provisioning and account management is handled through your {{site.data.keyword.cloud_notm}} account. If you already have an account, you can provision {{site.data.keyword.databases-for-redis}} from the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/services/databases-for-redis).
 
 For detailed provisioning information, including {{site.data.keyword.cloud_notm}} CLI instructions, see the [Provisioning](./howto-provisioning.html) page.
 
-If you don't yet have an {{site.data.keyword.cloud_notm}} account, sign up on the [registration](https://console.{DomainName}/registration/) page.
+If you don't yet have an {{site.data.keyword.cloud_notm}} account, sign up on the [registration](https://DomainName}/registration/) page.
 ]
 ### Managing Access to {{site.data.keyword.databases-for-redis}}
 
-{{site.data.keyword.databases-for-redis}} is an Identity and Access Management (IAM) integrated service. Access to the service is governed by the roles and attributes that are consistent across IAM-integrated services in {{site.data.keyword.cloud_notm}}. Get started with managing your users on the [IAM Getting Started tutorial](https://console.{DomainName}/docs/iam/quickstart.html#getstarted). For more information about IAM, see the [What is IAM?](https://console.{DomainName}/docs/iam/index.html#iamoverview) documentation.
+{{site.data.keyword.databases-for-redis}} is an Identity and Access Management (IAM) integrated service. Access to the service is governed by the roles and attributes that are consistent across IAM-integrated services in {{site.data.keyword.cloud_notm}}. Get started with managing your users on the [IAM Getting Started tutorial](https://{DomainName}/docs/iam/quickstart.html#getstarted). For more information about IAM, see the [What is IAM?](https://{DomainName}/docs/iam/index.html#iamoverview) documentation.
 
 More information on IAM roles and actions for the {{site.data.keyword.databases-for-redis}} service is available on the [Access Management](./reference-access-management.html) page.
 
 ### Using the cloud databases API
 
-You can use the {{site.data.keyword.cloud_notm}} databases API to manage your service. Authentication is IAM-based and you use your {{site.data.keyword.cloud_notm}} account's platform API keys to access the API. More information on API keys is in the [IAM documentation](https://console.{DomainName}/docs/iam/apikeys.html#platform-api-keys). The API foundation endpoint for your service is on the deployment's [_Overview_](./dashboard-overview.html) page. For more information, see the [API reference](https://console.{DomainName}/apidocs/cloud-databases-api).
+You can use the {{site.data.keyword.cloud_notm}} databases API to manage your service. Authentication is IAM-based and you use your {{site.data.keyword.cloud_notm}} account's platform API keys to access the API. More information on API keys is in the [IAM documentation](https://{DomainName}/docs/iam/apikeys.html#platform-api-keys). The API foundation endpoint for your service is on the deployment's [_Overview_](./dashboard-overview.html) page. For more information, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api).
 
 ## Using {{site.data.keyword.databases-for-redis}}
 

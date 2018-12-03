@@ -11,7 +11,7 @@ lastupdated: "2018-09-27"
 {:pre: .pre}
 {:tip: .tip}
 
-# Command line Tools for {{site.data.keyword.databases-for-redis}}
+# Using the {{site.data.keyword.cloud_notm}} CLI for {{site.data.keyword.databases-for-redis}}
 
 Use the {{site.data.keyword.cloud_notm}} CLI and the cloud databases plug-in to access and manage {{site.data.keyword.databases-for-redis_full}}.
 
