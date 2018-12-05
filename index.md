@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-12-05"
 ---
 
 {:new_window: target="_blank"}
@@ -18,14 +18,6 @@ lastupdated: "2018-09-27"
 {{site.data.keyword.databases-for-redis_full}} is a managed Redis service that is hosted in the {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. 
 {:shortdesc}
 
-## {{site.data.keyword.databases-for-redis}} as an {{site.data.keyword.cloud_notm}} service
-
-{{site.data.keyword.databases-for-redis}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](./dashboard-overview.html) of your service as well as configuration settings on the [Settings](./dashboard-settings.html) tab and access to your backups on the [Backups](./dashboard-backups.html) tab.
-
-### Using the command line interface
-
-The {{site.data.keyword.cloud_notm}} command line interface provides in interactive terminal for your {{site.data.keyword.cloud_notm}} account and your {{site.data.keyword.cloud_notm}} services. The cloud databases plug-in extends this functionality to your {{site.data.keyword.databases-for-redis}} deployments. More information and installation instructions are on the [Using Command line Tools for {{site.data.keyword.databases-for-redis}}](./howto-using-ibmcloud-cli.html) page.
-
 ## Provisioning {{site.data.keyword.databases-for-redis}}
 
 {{site.data.keyword.databases-for-redis}} is an {{site.data.keyword.cloud_notm}} service. Provisioning and account management is handled through your {{site.data.keyword.cloud_notm}} account. If you already have an account, you can provision {{site.data.keyword.databases-for-redis}} from the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/services/databases-for-redis).
@@ -40,17 +32,23 @@ If you don't yet have an {{site.data.keyword.cloud_notm}} account, sign up on th
 
 More information on IAM roles and actions for the {{site.data.keyword.databases-for-redis}} service is available on the [Access Management](./reference-access-management.html) page.
 
-### Using the cloud databases API
-
-You can use the {{site.data.keyword.cloud_notm}} databases API to manage your service. Authentication is IAM-based and you use your {{site.data.keyword.cloud_notm}} account's platform API keys to access the API. More information on API keys is in the [IAM documentation](https://{DomainName}/docs/iam/apikeys.html#platform-api-keys). The API foundation endpoint for your service is on the deployment's [_Overview_](./dashboard-overview.html) page. For more information, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api).
-
 ## Using {{site.data.keyword.databases-for-redis}}
 
-{{site.data.keyword.databases-for-redis}} deployments are secured with authentication and SSL/TLS encrypted connections. [Set the admin password](./howto-admin-password.html) to access your deployment. Then, if you want to manage the Redis databases directly, [connect by using command line tools for Redis](./connecting-cli-client.html). 
+{{site.data.keyword.databases-for-redis}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](./dashboard-overview.html) of your service as well as configuration settings on the [Settings](./dashboard-settings.html) tab and access to your backups on the [Backups](./dashboard-backups.html) tab.
+
+### Using the {{site.data.keyword.cloud_notm}} command line interface
+
+The {{site.data.keyword.cloud_notm}} command line interface provides in interactive terminal for your {{site.data.keyword.cloud_notm}} account and your {{site.data.keyword.cloud_notm}} services. The cloud databases plug-in extends this functionality to your {{site.data.keyword.databases-for-redis}} deployments. More information and installation instructions are on the [Using Command line Tools for {{site.data.keyword.databases-for-redis}}](./howto-using-ibmcloud-cli.html) page.
+
+### Using the cloud databases API
+
+{{site.data.keyword.databases-for-redis}} is compatible with the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API, so you can access and manage your service programmatically. Each region has an unique endpoint, so you can find the API foundation endpoint for your deployment on the [_Overview_](./dashboard-overview.html) page. The {{site.data.keyword.IBM_notm}} API documentation contains the full [{{site.data.keyword.databases-for}} API reference](https://{DomainName}/apidocs/cloud-databases-api). Authentication is IAM-based and you use your {{site.data.keyword.cloud_notm}} account's platform API keys to access the API. More information on API keys is in the [IAM documentation](https://{DomainName}/docs/iam/apikeys.html#platform-api-keys).
 
 ## Connecting to {{site.data.keyword.databases-for-redis}}
 
 General information on getting connection strings can be found on the [Getting Connection Strings](./howto-getting-connection-strings) page.
+
+{{site.data.keyword.databases-for-redis}} deployments are secured with authentication and SSL/TLS encrypted connections. [Set the admin password](./howto-admin-password.html) to access your deployment. Then, if you want to manage the Redis databases directly, [connect by using command line tools for Redis](./connecting-cli-client.html). 
 
 Specific guidance on connecting with Redis drivers is on the [Connecting External Applications](./connecting-external.html) page. If you want to connect a Cloud Foundry application that is running in {{site.data.keyword.cloud_notm}}, see the [Connecting an {{site.data.keyword.cloud_notm}} Application](./connecting-ibmcloud-app.html) page. The [Getting Started tutorial](./getting-started.html) that provides a sample application that can run locally or on {{site.data.keyword.cloud_notm}} to test-drive your {{site.data.keyword.databases-for-redis}} deployment.
 

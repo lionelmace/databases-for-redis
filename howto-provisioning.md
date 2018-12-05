@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-12-05"
 ---
 
 {:shortdesc: .shortdesc}
@@ -88,9 +88,4 @@ ibmcloud resource service-instance-create example-redis databases-for-redis stan
   "members_memory_allocation_mb": "4096"
 }'
 ```
-
-
-## Using the API
-
-The Resource Controller API is not currently publicly documented. Use the command line to provision new database deployments in the interim.
 
