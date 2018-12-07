@@ -23,13 +23,13 @@ Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{
   applications:
   - name:    example-helloworld-nodejs
     routes:
-    - route: example-helloworld-nodejs.appdomain.cloud
+    - route: example-helloworld-nodejs.mybluemix.net
     memory:  128M
     services:
       - example-redis
   ```
 
-- Change the route value to something unique. The route that you choose determines the subdomain of your application's URL: `<host>.appdomain.cloud`.
+- Change the route value to something unique. The route that you choose determines the subdomain of your application's URL: `<host>.mybluemix.net`.
 - Change the name value. The value that you choose is the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
 - Update the services value to match the name or [Cloud Foundry alias](#create-alias) of your {{site.data.keyword.databases-for-redis}} service.
 
