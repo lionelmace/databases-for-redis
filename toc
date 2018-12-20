@@ -6,6 +6,7 @@ Databases For Redis
 
 	{: .navgroup id="learn"}
 	index.md
+	pricing.md
 	getting-started.md
 
 	{: .topicgroup}

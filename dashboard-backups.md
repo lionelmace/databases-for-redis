@@ -20,8 +20,8 @@ lastupdated: "2018-08-27"
 
 To restore a backup to a new service instance:
 
-1. Click in the corresponding row to expand the options for the backup you want to download.
-2. Click the **Restore** button.  A message is displayed that a backup is in progress, and a 'pending' backup is added to the list of available backups.
+1. Click in the corresponding row to expand the options for the backup you want to restore.
+2. Click the **Restore** button.  A message is displayed that a restore from backup has started. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
 
 The new service instance is automatically named "redis-restore-[timestamp]", and appears on your {{site.data.keyword.cloud_notm}} dashboard when provisioning starts.
 
@@ -68,4 +68,4 @@ For more information and examples, see the [API Reference](https://{DomianName}/
 
 * {{site.data.keyword.cloud_notm}} Databases is not responsible for restoration, timeliness, or validity of said backups.
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the IBM Cloud Databases plug-in: `ibmcloud cdb backups deploymentname -s -f`.
-* As a managed service {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for additional help.
+* As a managed service, {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for additional help.
