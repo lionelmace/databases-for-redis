@@ -35,5 +35,6 @@ Databases For Redis
 	reference-versions.md
 	reference-access-management.md
 	reference-activity-tracker.md
+	reference-monitoring.md
 	reference-key-protect.md
 	{: .navgroup-end}
