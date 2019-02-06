@@ -25,7 +25,7 @@ A {{site.data.keyword.databases-for-redis}} Standard plan deploys as one highly 
 
 Resources | Breakdown | Price
 -------|-------|-------
-10 GB-Month disk | 2 members x 1 GB x $0.58 | $1.16
+1 GB-Month disk | 2 members x 1 GB x $0.58 | $1.16
 1 GB-Month RAM | 2 members x 1 GB  x $5 | $10
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
