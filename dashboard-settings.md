@@ -13,6 +13,7 @@ lastupdated: "2018-09-27"
 {:tip: .tip}
 
 # Settings
+{: #dashboard-settings}
 
 Manage your {{site.data.keyword.databases-for-redis_full}} service through these available settings.
 

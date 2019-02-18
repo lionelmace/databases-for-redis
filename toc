@@ -6,8 +6,11 @@ Databases For Redis
 
 	{: .navgroup id="learn"}
 	index.md
-	pricing.md
 	getting-started.md
+	pricing.md
+	high-availability.md
+	security-compliance.md
+	versioning.md
 
 	{: .topicgroup}
 	The Service Dashboard
@@ -20,7 +23,6 @@ Databases For Redis
 	howto-provisioning.md
 	howto-admin-password.md
 	howto-getting-connection-strings.md
-	howto-using-ibmcloud-cli.md
 
 	{: .topicgroup}
 	Connecting to Databases for Redis
@@ -30,9 +32,8 @@ Databases For Redis
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
-	reference-architecture.md
-	reference-security.md
-	reference-versions.md
+	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
+	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
 	reference-access-management.md
 	reference-activity-tracker.md
 	reference-monitoring.md

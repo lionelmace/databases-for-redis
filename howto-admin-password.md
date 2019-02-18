@@ -12,6 +12,7 @@ lastupdated: "2018-09-27"
 {:tip: .tip}
 
 # Setting the Admin Password
+{: #admin-password}
 
 The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username and password to connect and issue commands. The username for Redis is always "admin". 
 

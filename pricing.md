@@ -12,8 +12,8 @@ lastupdated: "2018-11-27"
 {:tip: .tip}
 
 
-
 # Pricing
+{: #pricing}
 
 A {{site.data.keyword.databases-for-redis}} Standard plan deploys as one highly available Redis cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-redis}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
 

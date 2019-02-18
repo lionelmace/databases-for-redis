@@ -12,15 +12,15 @@ lastupdated: "2018-10-29"
 {:tip: .tip}
 
 # Connecting an external application
-{: #connecting-external-app}
+{: #external-app}
 
 Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. 
 
 ## Getting Connection Strings
 
-Redis only supports a single-user, so you use the same credentials for all applications that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](./howto-getting-connection-strings.html) page.
+Redis only supports a single-user, so you use the same credentials for all applications that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings) page.
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./howto-admin-password.html) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 ## Connecting with a language's client
@@ -69,7 +69,7 @@ Node.js|`node_redis`|[Link](https://github.com/NodeRedis/node_redis)
 
 All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption. For {{site.data.keyword.databases-for-redis}}, this means supporting the unofficial `rediss:` protocol in connection strings. 
 
-If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](./connecting-cli-client.html) page, where it is used to connect the `redis-cli` application.
+If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page, where it is used to connect the `redis-cli` application.
 
 ### Using the self-signed certificate
 

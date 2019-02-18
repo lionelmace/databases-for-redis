@@ -12,7 +12,9 @@ lastupdated: "2018-09-27"
 {:tip: .tip}
 
 
-# Getting started tutorial
+# Getting Started
+{: #getting-started}
+
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-redis_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 

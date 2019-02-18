@@ -13,13 +13,14 @@ lastupdated: "2018-10-29"
 
 
 # Getting your Connection Strings
+{: #connection-strings}
 
 The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username and password to connect and issue commands. The username for Redis is always "admin".
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./howto-admin-password.html) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
-The simplest way to retrieve connection information is from the [cloud databases plug-in](./howto-using-ibmcloud-cli.html). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for your deployment. For example, to retrieve a connection string for a deployment named  "NewRedis", use the following command.
+The simplest way to retrieve connection information is from the [cloud databases plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for your deployment. For example, to retrieve a connection string for a deployment named  "NewRedis", use the following command.
 
 ```
 ibmcloud cdb deployment-connections NewRedis
@@ -73,7 +74,7 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information to connect, see the [Connecting an External Application](./connecting-external.html) page.
+For more information on using this information to connect, see the [Connecting an External Application](/docs/services/databases-for-redis?topic=databases-for-redis-external-app) page.
 
 ### The CLI Section
 
@@ -92,5 +93,5 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information, see the [Connecting with a command line client](./connecting-cli-client) page.
+For more information on using this information, see the [Connecting with a command line client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page.
 

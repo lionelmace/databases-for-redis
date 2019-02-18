@@ -13,12 +13,13 @@ lastupdated: "2018-12-05"
 
 
 # Connecting with a command line client
+{: #connecting-cli-client}
 
 You can access your Redis database directly from a command line client. A command line client allows for direct interaction and monitoring of the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, installing and modifying scripts, and other management activities.
 
 ## Admin Connection Strings
 
-Redis only supports a single-user, so you use the same credentials for all applications, including the command line clients, that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](./howto-getting-connection-strings.html) page. 
+Redis only supports a single-user, so you use the same credentials for all applications, including the command line clients, that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings) page. 
 
 The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
@@ -35,7 +36,7 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](./howto-admin-password.html) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 ## Installing `redli`
@@ -79,7 +80,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
 1. Install `stunnel`. Use your package manager for Linux, Homebrew for Mac, or [download](https://www.stunnel.org/downloads.html) the appropriate package for your platform.
 
 2. Grab connection information.
-   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](./howto-getting-connection-strings.html#the-redis-section) that is provided for connecting external applications and drivers.
+   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](/docs/services/databses-for-redis?topic=databases-for-redis-connection-strings#the-redis-section) that is provided for connecting external applications and drivers.
 
    The certificate is in the  "Base 64" field of the connection information. Copy, decode, and save the certificate to a file.
 
