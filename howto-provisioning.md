@@ -41,7 +41,7 @@ The database takes some time to deploy, and you are navigated back to your {{sit
 
 ## Using the Command Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Getting Started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli).
 
 To create a {{site.data.keyword.databases-for-redis}} deployment, you use the CLI to request a service instance with a `databases-for-redis` service ID.
 
