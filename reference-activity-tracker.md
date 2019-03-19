@@ -2,6 +2,9 @@
 copyright:
   years: 2017,2018
 lastupdated: "2018-09-27"
+
+subcollection: databases-for-redis
+
 ---
 
 {:new_window: target="_blank"}

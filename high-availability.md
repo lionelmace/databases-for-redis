@@ -3,6 +3,9 @@
 Copyright:
   years: 2019
 lastupdated: "2019-02-17"
+
+subcollection: databases-for-redis
+
 ---
 
 {:new_window: target="_blank"}
