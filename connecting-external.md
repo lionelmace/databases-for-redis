@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-10-29"
+  years: 2018, 2019
+lastupdated: "2019-04-10"
 
 subcollection: databases-for-redis
 
@@ -17,11 +17,7 @@ subcollection: databases-for-redis
 # Connecting an external application
 {: #external-app}
 
-Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. 
-
-## Getting Connection Strings
-
-Redis only supports a single-user, so you use the same credentials for all applications that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings) page.
+Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
@@ -76,10 +72,10 @@ If your driver does not support the `rediss:` protocol or TLS/SSL connections, i
 
 ### Using the self-signed certificate
 
-Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection.
-1. Copy the certificate information from the Base64 field of the connection information. 
-2. Decode the Base64 string into text and save it to a file. (You can use the Name that is provided or your own file name).
-3. Set the TLS/SSL parameters in your driver to use a certificate and provide the path to the driver.
+1. Copy the certificate information from the _Connections_ panel or the Base64 field of the connection information. 
+2. If needed, decode the Base64 string into text. 
+3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
+4. Provide the path to the certificate to the driver or client.
 
 ### CLI plug-in support for the self-signed certificate
 

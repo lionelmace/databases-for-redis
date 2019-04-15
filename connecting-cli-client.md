@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2018
-lastupdated: "2018-12-05"
+  years: 2017,2019
+lastupdated: "2019-04-10"
 
 subcollection: databases-for-redis
 
@@ -22,7 +22,7 @@ You can access your Redis database directly from a command line client. A comman
 
 ## Admin Connection Strings
 
-Redis only supports a single-user, so you use the same credentials for all applications, including the command line clients, that need to connect to your deployment. Documentation for retrieving the deployment's connection strings is on the [Getting Connection Strings](/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings) page. 
+Redis only supports a single-user, so you use the same credentials for all applications, including the command line clients, that need to connect to your deployment. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
