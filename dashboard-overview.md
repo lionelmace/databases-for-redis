@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-04-22"
 
 subcollection: databases-for-redis
 
@@ -15,7 +15,7 @@ subcollection: databases-for-redis
 {:pre: .pre}
 {:tip: .tip}
 
-# Service Overview
+# The UI - Dashboard Overview
 {: #dashboard-overview}
 
 The _Overview_ page shows you information about your {{site.data.keyword.databases-for-redis_full}} database. The overview includes essential identifying information.
@@ -63,4 +63,20 @@ Many API calls require the ID of the database deployment. The database deploymen
 ### {{site.data.keyword.cloud_notm}} databases API Reference
 
 For more information about the {{site.data.keyword.cloud_notm}} databases API, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api) page.
+
+## Settings
+
+The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
+- [scale](/docs/services/databases-for-redis?topic=databases-for-redis-resources-scaling)
+- [change the admin password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password)
+- [configure public and private endpoints](/docs/services/databases-for-redis?topic=cloud-databases-service-endpoints)
+- [implement or modify an IP whitelist](/docs/services/databases-for-redis?topic=cloud-databases-whitelisting)
+
+## Backups
+
+The _Backups_ tab is the UI for managing your deployments backups. All of the available backups are listed with their timestamps. Click on a backup to grab its ID or to restore it into a new deployment. More information is on the [Managing Backups](/docs/services/databases-for-redis?topic=databases-for-redis-dashboard-backups) page.
+
+## Docs
+
+The _Docs_ link opens the main documentation page for {{site.data.keyword.databases-for-redis}} in a new tab.
 

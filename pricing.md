@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2018
-lastupdated: "2018-11-27"
+  years: 2017,2019
+lastupdated: "2019-04-30"
 
 subcollection: databases-for-redis
 
@@ -32,16 +32,15 @@ Resources | Breakdown | Price
 1 GB-Month RAM | 2 members x 1 GB  x $5 | $10
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
-Total per month = $11.60/Month  
+Total per month = $11.16/Month  
 Total per hour = $.016/Hour
 
-All prices here are in US dollars. To see pricing in your local currency, you can to use the [pricing calculator](https://{DomainName}/pricing/configure/service/databases-for-redis).
+All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
-
 
 ## Using the Pricing Calculator
 
-For pricing estimation, input your total consumption across two data members into the calculator. This is roughly double the size of your data because your data is replicated to both members. For example, 1 GB of disk and 1 GB of RAM across two data members would be priced at 2 GB of disk and 2 GB of RAM respectively. 
+For pricing estimation, use the **Add to Estimate** button at the bottom of the [{{site.data.keyword.databases-for-redis}} catalog page](https://cloud.ibm.com/catalog/services/databases-for-redis). Input your total consumption across two data members into the calculator. This is roughly double the size of your data because your data is replicated to both members. For example, 1 GB of disk and 1 GB of RAM across two data members would be priced at 2 GB of disk and 2 GB of RAM respectively. 
 
 ![Pricing calculator estimation with 1 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png)
 
