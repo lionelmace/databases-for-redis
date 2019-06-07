@@ -14,8 +14,8 @@ subcollection: databases-for-redis
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Architecture, Security, and Compliance
-{: #architecture-security-compliance}
+# Security, and Compliance
+{: #security-compliance}
 
 
 ## Protection Against Unauthorized Access
@@ -33,8 +33,8 @@ subcollection: databases-for-redis
 
 - [Backups](/docs/services/databases-for-redis?topic=databases-for-redis-dashbaord-backups) for your deployment are included, unless you [configure Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache). The {{site.data.keyword.databases-for-redis}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) and are also [encrypted](/docs/services/cloud-object-storage?topic=cloud-object-storage-security).
 - All {{site.data.keyword.databases-for-redis}} deployments are configured with replication to provide both data resilience and [high-availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availbility). Deployments contain a cluster with two data members in a master/replica configuration and state is managed with a quorum of three [Redis sentinels](https://redis.io/topics/sentinel).
-- If you deploy to an [{{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
-- If you deploy to a {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations
+- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
+- If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations
  
 ## SOC 2 Type 1 Certification
 

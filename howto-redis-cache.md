@@ -47,7 +47,7 @@ Note on `volitile` and `allkeys`. When using an `allkeys` policy, the algorithm 
 Policy|Behavior|Notes
 ---------|---------|------------
 `appendonly` | Default value, `yes`. Enables Redis data to be written to disk. | Most likely if you are just caching data, you want to set this value to `no`.
-`stop-writes-on-bgsave-error` | Default value, `yes`. Redis stops accepting writes if it detects an unsuccessful backup snapshot.| If your backups are disabled for caching, you can set to `no`.
+`stop-writes-on-bgsave-error` | Default value, `yes`. Redis stops accepting writes if it detects an unsuccessful backup snapshot.| For caching, you can set to `no`.
 `maxmemory-samples` | Tunes the LRU algorithm, default value `5`. | [Redis Docs Link](https://redis.io/topics/lru-cache#approximated-lru-algorithm)
 
 {: caption="Table 2. Redis cache settings " caption-side="top"}

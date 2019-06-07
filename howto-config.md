@@ -17,11 +17,11 @@ subcollection: databases-for-redis
 # Changing the Redis Configuration
 {: #changing-configuration}
 
-{{site.data.keyword.databases-for-redis_full}} allows you to change some of the Redis configuration settings so you can tune your databases to your use-case. In a typical Redis setting, you can change the configuration from the command-line. You can still change your configuration at any time using `CONFIG SET` in a cli-client. However, these changes will NOT persist in the event of a failover, node restart, or other event on your deployment. Changing the configuration from the CLI can be used for testing, evaluation, and tuning purposes.
+{{site.data.keyword.databases-for-redis_full}} allows you to change some of the Redis configuration settings so you can tune your databases to your use-case. In a typical Redis setting, you can change the configuration from the command line. You can still change your configuration at any time by using `CONFIG SET` in a cli-client. However, these changes will NOT persist in the event of a failover, node restart, or other event on your deployment. Changing the configuration from the CLI can be used for testing, evaluation, and tuning purposes.
 
 To make permanent changes to the database configuration, you want to use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment. 
 
-The configuration is defined in a schema. When you change the the configuration via the API or the CLI, you make changes to the configuration's JSON schema. To make a change, you make a JSON object with the settings and their new values. For example, to set the `maxmemory-policy` setting , you would supply 
+The configuration is defined in a schema. To make a change, you send a JSON object with the settings and their new values to the API or the CLI. For example, to set the `maxmemory-policy` setting , you would supply 
 ```
 {"configuration":{"maxmemory-policy":"allkeys-lru"}}
 ```
@@ -49,7 +49,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 
 To check the current value of a setting, use [`CONFIG GET`](https://redis.io/commands/config-get) from a [CLI client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client). You can check all of the settings by using `CONFIG GET *`.
 
-Many of the settings below are used to configure Redis as a cache. For more information, see the [Configuring Redis as a Cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache) page.
+Many of the settings are used to configure Redis as a cache. For more information, see the [Configuring Redis as a Cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache) page.
 
 Setting|Default|Notes
 ----------|-----|-----------
