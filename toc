@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-redis" audience="service" arm="4146379" href="/docs/services/databases-for-redis/index.html" path="services/databases-for-redis"}}
+{: .toc subcollection="databases-for-redis" category="databases" audience="service" arm="4146379" href="/docs/services/databases-for-redis/index.html" path="services/databases-for-redis"}}
 Databases For Redis
 
 	{: .navgroup id="learn"}
