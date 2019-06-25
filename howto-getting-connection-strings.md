@@ -47,18 +47,16 @@ The admin credentials appear in the table, and the connection strings are availa
 You can retrieve connection information is from the [cloud databases plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference). Use the `ibmcloud cdb deployment-connections` command to display a formatted connection URI for your deployment. For example, to retrieve a connection string for a deployment named  "NewRedis", use the following command.
 
 ```
-ibmcloud cdb deployment-connections NewRedis
-```
-Or
-```
-ibmcloud cdb cxn NewRedis
+ibmcloud cdb deployment-connections NewRedis [--endpoint-type <endpoint type>]
 ```
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. Retrieve all the connection information for a deployment named  "NewRedis", use the following command.
 
 ```
-ibmcloud cdb deployment-connections NewRedis --all
+ibmcloud cdb deployment-connections NewRedis --all [--endpoint-type <endpoint type>]
 ```
+
+If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment only has a private endpoint, you have to specify `--endpoint-type private` or the commands return an error.
 
 ## Getting Connection Strings from the API
 

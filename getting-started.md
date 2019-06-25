@@ -183,7 +183,7 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 To start exploring your {{site.data.keyword.databases-for-redis}} service, see the following topics about the service dashboard:
 
 - [Dashboard Overview](https://cloud.ibm.com/docs/services/databases-for-redis/dashboard-overview.html)
-- [Backups](https://cloud.ibm.com/docs/services/databases-for-redis/dashboard-backups.html)
+- [Backups](/docs/services/databases-for-redis?topic=cloud-databases-dashboard-backups)
 - [Getting Connection Strings](https://cloud.ibm.com/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings)
 
 

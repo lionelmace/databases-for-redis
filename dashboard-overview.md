@@ -74,7 +74,7 @@ The _Settings_ tab contains the UI for many of the tunable settings for your dep
 
 ## Backups
 
-The _Backups_ tab is the UI for managing your deployments backups. All of the available backups are listed with their timestamps. Click on a backup to grab its ID or to restore it into a new deployment. More information is on the [Managing Backups](/docs/services/databases-for-redis?topic=databases-for-redis-dashboard-backups) page.
+The _Backups_ tab is the UI for managing your deployments backups. All of the available backups are listed with their timestamps. Click on a backup to grab its ID or to restore it into a new deployment. More information is on the [Managing Backups](/docs/services/databases-for-redis?topic=cloud-databases-dashboard-backups) page.
 
 ## Docs
 
