@@ -18,7 +18,7 @@ subcollection: databases-for-redis
 # Pricing
 {: #pricing}
 
-A {{site.data.keyword.databases-for-redis}} Standard plan deploys as one highly available Redis cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-redis}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
+A {{site.data.keyword.databases-for-redis}} Standard plan deploys as one highly available Redis cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-redis}} deployments have a minimum of 1 GB of disk and 1 GB of RAM per data member.
 
 ## Cost Breakdown
 
@@ -47,6 +47,12 @@ For pricing estimation, use the **Add to Estimate** button on the [{{site.data.k
 ## Backups Pricing
 
 Users also receive their total disk space purchased, per database, in free backup storage. For example, in a month, if you have a {{site.data.keyword.databases-for-redis}} deployment that has 1 GB of disk per member and two data members, you receive 2 GB of backup storage free for that month. If your backup storage utilization is greater than 2 GB for the month in this scenario, each GB is charged at an overage $0.03/month. Backups are compressed, so most deployments will not go over the allotted credit.
+
+## Dedicated Cores Pricing
+
+When you provision, you have the option of selecting the initial CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $30 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 6 cores, and billed at $180 per month. 
+
+Dedicated cores are an optional feature. The default `Shared CPU` setting provisions your deployment on hosts with shared compute resources and incurs no additional charge.
 
 ## Scaling per Member
 

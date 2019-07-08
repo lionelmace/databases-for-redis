@@ -46,6 +46,9 @@ Also, your deployment is configured with `maxmemory` is set to use 80% of the no
 
 If you [configured Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
 
+**Dedicated Cores** - 
+If you provisioned your deployment with dedicated cores, you can increase the CPU allocation to the deployment. This option is not available on deployments that were not provisioned with an initial CPU allocation.
+
 ## Scaling in the UI
 
 Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI currently uses a coarser-grained resolution than is available via the CLI or API. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
