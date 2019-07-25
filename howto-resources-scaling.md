@@ -4,6 +4,8 @@ Copyright:
   years: 2019
 lastupdated: "2019-04-22"
 
+keywords: redis, databases, scaling
+
 subcollection: databases-for-redis
 
 ---

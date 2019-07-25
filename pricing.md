@@ -3,6 +3,8 @@ copyright:
   years: 2017,2019
 lastupdated: "2019-04-30"
 
+keywords: redis, databases, pricing
+
 subcollection: databases-for-redis
 
 ---

@@ -3,6 +3,8 @@ copyright:
   years: 2017,2019
 lastupdated: "2019-05-06"
 
+keywords: redis, databases
+
 subcollection: databases-for-redis
 
 ---

@@ -4,6 +4,8 @@ Copyright:
   years: 2019
 lastupdated: "2019-04-25"
 
+keywords: redis, databases, redis cache
+
 subcollection: databases-for-redis
 
 ---
