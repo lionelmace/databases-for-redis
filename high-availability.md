@@ -55,7 +55,7 @@ The number of Input-Output Operations per second (IOPS) is limited by the type o
 
 ### Monitoring your deployment
 
-Deployment owners can [monitor](/docs/services/databases-for-redis?topic=databases-for-redis-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
+Deployment owners can [monitor](/docs/services/databases-for-redis?topic=cloud-databases-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
 
 If you are planning on running operations that might put a spike in resource usage, you can manually scale your service's resources up to avoid hitting any limits that affect deployment operations.
 
