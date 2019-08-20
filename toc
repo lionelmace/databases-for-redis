@@ -12,6 +12,7 @@ Databases For Redis
 	Service Overview
 		dashboard-overview.md
 		high-availability.md
+		performance.md
 		security-compliance.md
 		pricing.md
 

@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-08-06"
 
 keywords: redis, databases
 
@@ -21,43 +21,37 @@ subcollection: databases-for-redis
 
 {{site.data.keyword.databases-for-redis_full}} is a managed cloud database service that is fully integrated into the {{site.data.keyword.cloud_notm}} ecosystem. The database, storage, and supporting infrastructure all run in {{site.data.keyword.cloud_notm}}.
 
+## Database HA Features
+
 {{site.data.keyword.databases-for-redis}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with two data members in a master/replica configuration and kept in sync using asynchronous replication. High-availability is monitored and managed with a quorum of three [Redis sentinels](https://redis.io/topics/sentinel).
 
 By default, data persistence is enabled on all deployments and your data is written to disk. The data persistence model uses [preamble snapshots and AOF (Append Only File)](https://redis.io/topics/persistence). The interval for Redis to write to disk (fsync) is set to [once every second](https://redis.io/topics/persistence#how-durable-is-the-append-only-file). 
 
 You can turn off data persistence, which is useful for [configuring Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache).
 
-## Application-level High-Availability
+## HA for your Application 
 
-Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to retry connections when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
+Applications that communicate over networks and cloud services are subject to transient connection failures. Also, because {{site.data.keyword.databases-for-redis}} is a managed service, regular updates and database maintenance occurs as part of normal operations. These operations can cause a short blip in connectivity or trigger a failover. In the event of a failover, it takes a short time for the database to determine which member is a replica and which is the leader, so you might also see a short connection interruption.
 
-Because {{site.data.keyword.databases-for-redis}} is a managed service, regular updates and database maintenance occurs as part of normal operations. This can occasionally cause short intervals where your database is unavailable. It can also cause a the database to trigger a graceful fail-over, retry, and reconnect. It takes a short time for the database to determine which member is a replica and which is the leader, so you might also see a short connection interruption. Failovers generally take less than 30 seconds.
+You want to design your applications to handle a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}. 
 
-Your applications have to be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
+Many Redis clients have features for error checking and handling. For example,
+- The python client [`Redis.py`](https://github.com/andymccurdy/redis-py#connections) throws a `ConnectionError` when a connection fails and another command is run. It also has the ability to issue health checks periodically or before commands.
+- The Java client [`Jedis`](https://github.com/xetorthio/jedis/wiki) throws a `JedisConnectionException` when it can't reach the database, and it tries to reconnect. However, it doesn't automatically retry a command, as not every command is safe to retry or run multiple times.
+- The C# driver [`StackExchange.Redis`](https://stackexchange.github.io/StackExchange.Redis/Configuration#configuration-options) has adjustable parameters for client-side timeout, reconnect, and retry logic. You can tune these to suit your application requirements.
 
-Several minutes of database unavailability or connection interruption is not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
+A good example of cloud-ready application development using the Node.js client `ioredis` is in the IBM Developer article [Error detection and handling with Redis](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/).
 
-## Performance
+In all cases, you should consult your client's documentation to help you design a stable application that checks for connectivity, re-connects when disconnected, and retries commands when it makes sense for your application to do so.
+{: .tip}  
 
-{{site.data.keyword.databases-for-redis}} deployments do not auto-scale. You can scale your deployments [to your usage](/docs/services/databases-for-redis?topic=databases-for-redis-resources-scaling). There are a few factors to consider if you are concerned about the performance of your deployment.
+Several minutes of database unavailability or connection interruption is not expected. Open a [support ticket](/docs/get-support?topic=get-support-getting-customer-support) with details if you have time periods longer than a minute with no connectivity so we can investigate. 
 
-### Memory Policies
+## Monitoring the state of your databases
 
-By default, deployments are configured with a `noeviction` policy. All data is kept in memory until the `maxmemory` limit is reached and Redis returns an error if the memory limit is exceeded. The `maxmemory` is set to 85% of a data node's available memory, so your node doesn't run out of system resources. For example, the minimum size deployment has 1 GB RAM per node, and its `maxmemory` is set to 858993459 bytes.
+{{site.data.keyword.databases-for-redis}} has [{{site.data.keyword.la_full_notm}} integration](/docs/services/databases-for-redis?topic=cloud-databases-logging) so that you can view live and historical logs.
 
-You can scale the amount of memory to accommodate more data, and you can configure the `maxmemory` setting to tune memory usage. The [Redis documentation](https://redis.io/topics/memory-optimization#memory-allocation) has some good information on memory behavior and tuning `maxmemory`.
-
-You can also configure your deployment to use [Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), allowing Redis to evict data out of memory once the memory limit has been reached. 
-
-### Disk IOPS
-
-The number of Input-Output Operations per second (IOPS) is limited by the type of storage volume. Storage volumes for {{site.data.keyword.databases-for-redis}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance). By default, a deployment starts with persistence enabled. It's possible for very busy databases to exceed the IOPS for the disk size, and increasing disk can alleviate a performance bottleneck. 
-
-### Monitoring your deployment
-
-Deployment owners can [monitor](/docs/services/databases-for-redis?topic=cloud-databases-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
-
-If you are planning on running operations that might put a spike in resource usage, you can manually scale your service's resources up to avoid hitting any limits that affect deployment operations.
+Checking your deployment's logs helps you monitor the state of HA and replication for your deployment. If you are having persistent issues with your applications, logs can also provide insight to what is happening on your databases when you are experiencing connection failures or other disruptions. 
 
 ## SLA
 

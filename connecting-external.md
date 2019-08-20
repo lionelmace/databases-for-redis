@@ -24,7 +24,7 @@ Your applications and drivers use connection strings to make a connection to {{s
 You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
-## Connecting with a language's client
+## Connection Strings for Applications
 
 The information a driver needs to make a connection to your deployment is in the "redis" section of your connection strings. The table contains a breakdown for reference.
 
@@ -44,33 +44,47 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-Redis drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example,
+Redis drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, if you set the connection string in the environment variable `REDIS_URL`
 ```
-rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
+export REDIS_URL=rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
+```
+then the Node.js client is able to make a connection with
+```let connectionString = process.env.REDIS_URL;
+
+if (connectionString === undefined) {  
+  console.error("Please set the REDIS_URL environment variable");
+  process.exit(1);
+}
+
+let client = null;
+
+client = redis.createClient(connectionString, {
+  tls: { servername: new URL(connectionString).hostname }
+});
 ```
 
-Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis.io site](https://redis.io/clients).
+Or the connection string can be parsed and its parts sent to the connection handler, as in this Python client example.
+```
+parsed = urlparse(connection_string)
 
-Language|Driver|Source
---------|------|---------------------
-C|`hiredis`|[Link](https://github.com/redis/hiredis)
-PHP|`phpredis`|[Link](https://github.com/phpredis/phpredis)
-PHP|`Predis`|[Link](https://github.com/nrk/predis)
-Ruby|`redis-rb`|[Link](https://github.com/redis/redis-rb)
-Python|`redis-py`|[Link](https://github.com/andymccurdy/redis-py)
-C#|`ServiceStack.Redis`|[Link](https://github.com/ServiceStack/ServiceStack.Redis)
-C#|`StackExchange.Redis`|[Link](https://github.com/StackExchange/StackExchange.Redis)
-Go|`redigo`|[Link](https://github.com/gomodule/redigo)
-Go|`Radix`|[Link](https://github.com/mediocregopher/radix.v2)
-Node.js|`ioredis`|[Link](https://github.com/luin/ioredis)
-Node.js|`node_redis`|[Link](https://github.com/NodeRedis/node_redis)
-{: caption="Table 2. Common Redis drivers" caption-side="top"}
+r = redis.StrictRedis(
+    host=parsed.hostname,
+    port=parsed.port,
+    password=parsed.password,
+    ssl=True,
+    ssl_ca_certs='/etc/ssl/certs/ca-certificates.crt',
+    decode_responses=True)
+```
 
-## Driver TLS and self-signed certificate support
+Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis site](https://redis.io/clients). Some useful things to keep in mind when choosing a client are features that allow you to easily design your application for the cloud, like configuring [high-availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availability), security, and self-signed certificate support.
+
+## TLS and self-signed certificate support
 
 All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption. For {{site.data.keyword.databases-for-redis}}, this means supporting the unofficial `rediss:` protocol in connection strings. 
 
 If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page, where it is used to connect the `redis-cli` application.
+
+Deployments also come with a self-signed certificate so you can verify the server upon starting a connection. While not required, it is an additional security step that is recommended if your client supports it.
 
 ### Using the self-signed certificate
 
@@ -81,7 +95,7 @@ If your driver does not support the `rediss:` protocol or TLS/SSL connections, i
 
 ### CLI plug-in support for the self-signed certificate
 
-You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver.
+You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the client.
 
 
 
