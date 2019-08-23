@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-09-27"
+  years: 2018, 2019
+lastupdated: "2019-07-29"
 
 subcollection: databases-for-redis
 
@@ -15,176 +15,92 @@ subcollection: databases-for-redis
 {:tip: .tip}
 
 
-# Getting Started
+# Getting Started Tutorial
 {: #getting-started}
 
-This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-redis_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
-{: shortdesc}
-
-If you have already created your deployment and just want to connect to your Redis databases, you can skip to [setting your administrator password](https://cloud.ibm.com/docs/services/databases-for-redis/howto-admin-password.html) and then start using a [command line tool to connect](https://cloud.ibm.com/docs/services/databases-for-redis/connecting-cli-client.html).
-{: .tip}
+This tutorial is a short introduction to using an {{site.data.keyword.databases-for-redis_full}} deployment.
 
 ## Before you begin
 
-Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{:new_window}.
+You need to have an [{{site.data.keyword.cloud_notm}} account](https://ibm.biz/databases-for-redis-signup){:new_window}.
 
-You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
+And a {{site.data.keyword.databases-for-redis}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-redis/). Give your deployment a memorable name that appears in your account's Resource List.
 
-## Step 1. Create a {{site.data.keyword.databases-for-redis}} service instance
-{: #create-service}
+[Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html) and the [Cloud Databases CLI Plugin](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line, and the plugin contains the commands that you use to communicate with your database deployments.
 
-You can create a {{site.data.keyword.databases-for-redis}} service from the [{{site.data.keyword.databases-for-redis}} page](https://cloud.ibm.com/catalog/services/databases-for-redis/) in the {{site.data.keyword.cloud_notm}} catalog.
+## 1. Setting the Admin Password
 
-Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_. In this example, the service name is "example-redis".
+You have to set the admin password before you can use it to connect. To set the password through the UI, open the _Settings_ tab and use the _Change Password_ panel to set a new admin password.
 
-Click **Create** to provision your service. Provisioning can take a while to complete. You are taken back to your {{site.data.keyword.cloud_notm}} _Dashboard_ while the service is provisioning. 
+Alternatively, use the `cdb user-password` command from the {{site.data.keyword.cloud_notm}} CLI cloud databases plugin to set the admin password with the command line.
+```
+ibmcloud cdb user-password <deployment-name> admin <new-password>
+```
 
-You can not connect an application to the service until provisioning has completed.
+## 2. Downloading and Installing Redli
+
+To get a feel for connecting, sending, and retrieving data with Redis, you might want to start with connecting with a CLI client. All Cloud Databases use TLS/SSL secured connections, so you have to use a Redis CLI client that has support for TLS/SSL, like [redli](https://github.com/IBM-Cloud/redli).
+
+To install redli, download and install the package for your system from its [releases page](). Un-compress the files, give the binary executable permissions, and move it to your path. For example, to install it on a Mac download the `redli....darwin_amd64.tar.gz` file and run
+```
+tar zxvf redli_0.4.4_darwin_amd64.tar.gz
+chmod +x redli
+sudo cp redli /usr/local/bin
+```
+
+Unfortunately, the native redis-cli client does not have support for TLS/SSL connections, and deployments require that  connections are secure. If you want to use redis-cli, you can set up something like [stunnel]() to handle the TLS/SSL connection. More information is on the [Connecting with a cli client]() page.
 {: .tip}
 
-## Step 2. Clone the Hello World sample app from GitHub
+## 3. Connecting with Redli and the IBM Cloud CLI
 
-Clone the Hello World app to your local environment from your terminal by using the following command:
-
+Assuming at this point you have redli, ibmcloud CLI, and the cloud databases plug-in installed, you can start a connection to your deployment. Login with `ibmcloud login`, and connect with `ibmcloud cdb cxn -s`.
 ```
-git clone https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-nodejs.git
+ibmcloud cdb cxn -s <deployment-name>
 ```
+It prompts for the admin password and uses redli to connect. You can now store and retrieve data with your Redis deployment. 
 
-## Step 3. Install the app dependencies
+## 3. (alt) Getting and Using Connection Strings
 
-Use npm to install dependencies.
+You also set up a connection to your deployment through redli yourself without using the ibmcloud CLI.
 
-1. From your terminal, change the directory to where the sample app is located.
-  
-  ```
-  cd clouddatabases-redis-helloworld-nodejs
-  ```
+Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment. The three pieces you need are the self-signed certificate, the certificate name, and the connection string in the _CLI endpoint_ field. 
 
-2. Install the dependencies listed in the `package.json` file.
-  
-  ```
-  npm install
-  ```
+Save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Remember where the file is saved.
 
-## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
-
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html).
-
-## Step 5. Connect to {{site.data.keyword.cloud_notm}}
-
-1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
-
-  ```
-  ibmcloud login
-  ```
-
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://cloud.ibm.com/docs/cli/login_federated_id.html#federated_id) to learn more.
-  {: .tip}
-
-2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
-
-  ```
-  ibmcloud target --cf
-  ```
-
-  Choose from the options provided, by using the same values that you used when you created the service.
-
-## Step 6. Create a Cloud Foundry alias for the database service.
-{: #create-alias}
-
-Make the database service discoverable by Cloud Foundry applications by giving it a Cloud Foundry alias. 
-
-`ibmcloud resource service-alias-create alias-name --instance-name instance-name`
-
-The alias name can be the same as the database service instance name. For example, use this command for database that was created in step 1.
-
-`ibmcloud resource service-alias-create example-redis --instance-name example-redis`
-
-## Step 7. Update the app's manifest file
-{: #update-manifest}
-
-{{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
-
-1. In an editor, open a new file and add the following text:
-
-  ```
-  ---
-  applications:
-  - name:    example-helloworld-nodejs
-    routes:
-    - route: example-helloworld-nodejs.us-south.cf.appdomain.cloud
-    memory:  128M
-    services:
-      - example-redis
-  ```
-
-2. Change the `route` value to something unique. The route that you choose determines the subdomain of your application's URL:  `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
-3. Change the `name` value. The name that you choose is displayed in your {{site.data.keyword.cloud_notm}} dashboard.
-4. Update the `services` value to match the alias of the service you created in [Create a Cloud Foundry alias for the database service](#create-alias).
-## Step 8. Push the app to {{site.data.keyword.cloud_notm}}.
-
-This step fails if the service is not finished provisioning from Step 1. You can check its progress on your {{site.data.keyword.cloud_notm}} _Dashboard_.
-{: .tip}
-
-When you push the app, it is automatically bound to the service specified in the manifest file.
-
+The connection string in the _CLI endpoint_ field is the fully-formatted command to make a CLI connection to your deployment using redli. Navigate to where you have saved the certificate on your system or provide the full path to the certificate to the `REDIS_CERTFILE` environment variable. Set the admin username and password in the environment as `USERNAME` and `PASSWORD`. Use the CLI connection string to start redli.
 ```
-ibmcloud cf push
+REDIS_CERTFILE=101afa63-91d0-11e9-a88d-5a059876d90f redli -u rediss://$USERNAME:$PASSWORD@da4103eb-f1ef-4f2d-8b41-0bfd98cb65bc.8117147f814b4b2ea643610826cd2046.databases.appdomain.cloud:30174/0
 ```
 
-## Step 9. Check that the app is connected to your {{site.data.keyword.databases-for-redis}} service
+## 4. Using Redis
 
-1. Go to your {{site.data.keyword.databases-for-redis}} service dashboard
-2. Select _Connections_ from the dashboard menu. Your application is listed under _Connected Applications_.
-
-If your application is not listed, repeat Steps 7 and 8, making sure that you entered the correct details in [manifest.yml](#update-manifest).
-
-## Step 10. Use the app
-
-Now, when you visit `<route>.{region}.cf.appdomain.cloud/` you can see the contents of your {{site.data.keyword.databases-for-redis}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you see any words and definitions that were already added are now listed.
-
-## Running the app locally
-
-Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.databases-for-redis}} service instance. To connect to the service, you need to create a set of service credentials.
-
-2. Select _Service Credentials_ from the main menu to open the Service Credentials view.
-3. Click **New Credential**.
-4. Choose a name for your credentials and click **Add**.
-5. Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
-6. In your editor of choice, create a new file with the following, inserting your credentials as shown:
-
-  ```
-  {
-    "services": {
-      "databases-for-redis": [
-        {
-          "credentials": INSERT YOUR CREDENTIALS HERE
-        }
-      ]
-    }
-  }
-  ```
-7. Save the file as `vcap-local.json` in the directory where the sample app is located.
-
-To avoid accidentally exposing your credentials when you push an application to GitHub or {{site.data.keyword.cloud_notm}}, make sure that the file that contains your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory, you can see that `vcap-local.json` is listed in both. It is not included in the files that are uploaded when you push the app to either GitHub or {{site.data.keyword.cloud_notm}}.
-{: .tip}
-
-Now start the local server.
+Now that you have a connection open, which looks like
 ```
-npm start
+Connected to 4.0.10
+>
+```
+you can start storing and retrieving data.
+```
+Connected to 4.0.10
+> set foo bar
+OK
+> get foo
+"bar"
+>
 ```
 
-The app is now running at http://localhost:8080. You can add words and definitions to your {{site.data.keyword.databases-for-redis}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
+The Redis documentation has an introduction to the many Redis data types, with examples. There is also a complete command reference.
+- [An introduction to Redis data types and abstractions](https://redis.io/topics/data-types-intro)
+- [Command Reference - Redis](https://redis.io/commands/)
 
-## Next steps
+## Next Steps
 
-To understand more about how the [sample app](https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-nodejs) works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
+If you are just using Redis for the first time, it is a good idea to take a tour through the [official Redis documentation](https://redis.io/documentation). 
 
-To start exploring your {{site.data.keyword.databases-for-redis}} service, see the following topics about the service dashboard:
+If you are planning to use Databases-for-Redis for your applications, check out some of our other pages on 
+- [Connecting an external application](/docs/services/databases-for-redis?topic=databases-for-redis-external-app)
+- [Connecting an IBM Cloud application](/docs/services/databases-for-redis?topic=databases-for-redis-ibmcloud-app)
 
-- [Dashboard Overview](https://cloud.ibm.com/docs/services/databases-for-redis/dashboard-overview.html)
-- [Backups](/docs/services/databases-for-redis?topic=cloud-databases-dashboard-backups)
-- [Getting Connection Strings](https://cloud.ibm.com/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings)
-
-
-[ibm_cloud_signup_url]: https://ibm.biz/databases-for-redis-signup
+Also, to ensure the stability of your applications and your database, check out the pages on 
+- [High-Availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availability)
+- [Performance](/docs/services/databases-for-redis?topic=databases-for-redis-performance)

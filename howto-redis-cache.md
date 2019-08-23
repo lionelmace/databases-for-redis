@@ -24,7 +24,7 @@ subcollection: databases-for-redis
 
 ## Cache Settings
 
-To configure the cache, you adjust a few of the Redis databases settings. `maxmemory` that defines how large the cache. The `maxmemory-policy` defines the eviction behavior when the `maxmemory` limit is reached. The other policies take care of database operations and tuning.
+To configure the cache, you adjust the `maxmemory` and the `maxmemory` settings of your deployment. `maxmemory` defines the size of the cache. The `maxmemory-policy` defines the eviction behavior when the `maxmemory` limit is reached. In addition, there are other settings that take care of database operations and tuning.
 
 ### `maxmemory`
 
@@ -48,7 +48,7 @@ Note on `volitile` and `allkeys`. When using an `allkeys` policy, the algorithm 
 
 Policy|Behavior|Notes
 ---------|---------|------------
-`appendonly` | Default value, `yes`. Enables Redis data to be written to disk. | Most likely if you are just caching data, you want to set this value to `no`.
+`appendonly` | Default value, `yes`. Enables Redis data to be written to disk. | If you are just caching data, you want to set this value to `no`.
 `stop-writes-on-bgsave-error` | Default value, `yes`. Redis stops accepting writes if it detects an unsuccessful backup snapshot.| For caching, you can set to `no`.
 `maxmemory-samples` | Tunes the LRU algorithm, default value `5`. | [Redis Docs Link](https://redis.io/topics/lru-cache#approximated-lru-algorithm)
 
@@ -61,7 +61,7 @@ To adjust the configuration of your deployment, you send a JSON object containin
 You are able to use `CONFIG SET` directly from a Redis cli-client, but changes made there will not be permanent. Use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to make changes to your deployment's configuration file. More information is in [Changing Your Redis Configuration](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache).
 {: .tip} 
 
-For example, the Redis documentation recommends using the `allkeys-lru` setting as a good starting place for a general-use cache. Its also just fine to leave the `maxmemory` and `maxmemory-samples` at their default values. So to configure the cache from the CLI, you can use
+For example, the Redis documentation recommends the `allkeys-lru` setting as a good starting place for a general-use cache. It's also fine to leave the `maxmemory` and `maxmemory-samples` at their default values. So to configure the cache from the CLI, you can use
 ```
 ibmcloud cdb deployment-configuration <deployment name or CRN> {"configuration":{"maxmemory-policy":"allkeys-lru", "appendonly":"no", "stop-writes-on-bgsave-error":"no"}}
 ```

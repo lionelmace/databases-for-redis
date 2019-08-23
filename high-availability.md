@@ -16,7 +16,7 @@ subcollection: databases-for-redis
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# High-Availability and Performance
+# High-Availability
 {: #high-availability}
 
 {{site.data.keyword.databases-for-redis_full}} is a managed cloud database service that is fully integrated into the {{site.data.keyword.cloud_notm}} ecosystem. The database, storage, and supporting infrastructure all run in {{site.data.keyword.cloud_notm}}.
@@ -38,14 +38,14 @@ You want to design your applications to handle a temporary loss in connectivity 
 Many Redis clients have features for error checking and handling. For example,
 - The python client [`Redis.py`](https://github.com/andymccurdy/redis-py#connections) throws a `ConnectionError` when a connection fails and another command is run. It also has the ability to issue health checks periodically or before commands.
 - The Java client [`Jedis`](https://github.com/xetorthio/jedis/wiki) throws a `JedisConnectionException` when it can't reach the database, and it tries to reconnect. However, it doesn't automatically retry a command, as not every command is safe to retry or run multiple times.
-- The C# driver [`StackExchange.Redis`](https://stackexchange.github.io/StackExchange.Redis/Configuration#configuration-options) has adjustable parameters for client-side timeout, reconnect, and retry logic. You can tune these to suit your application requirements.
+- The C# driver [`StackExchange.Redis`](https://stackexchange.github.io/StackExchange.Redis/Configuration#configuration-options) has adjustable parameters for client-side timeout, reconnect, and retry logic. You can tune parameters these to suit your application requirements.
 
 A good example of cloud-ready application development using the Node.js client `ioredis` is in the IBM Developer article [Error detection and handling with Redis](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/).
 
-In all cases, you should consult your client's documentation to help you design a stable application that checks for connectivity, re-connects when disconnected, and retries commands when it makes sense for your application to do so.
+In all cases, you should consult your client's documentation to help you design a stable application that checks for connectivity, reconnects when disconnected, and retries commands when it makes sense for your application to do so.
 {: .tip}  
 
-Several minutes of database unavailability or connection interruption is not expected. Open a [support ticket](/docs/get-support?topic=get-support-getting-customer-support) with details if you have time periods longer than a minute with no connectivity so we can investigate. 
+Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](/docs/get-support?topic=get-support-getting-customer-support) with details if you have time periods longer than a minute with no connectivity. 
 
 ## Monitoring the state of your databases
 

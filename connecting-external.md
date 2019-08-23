@@ -48,8 +48,10 @@ Redis drivers are often able to make a connection to your deployment when given 
 ```
 export REDIS_URL=rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
 ```
-then the Node.js client is able to make a connection with
-```let connectionString = process.env.REDIS_URL;
+
+Then the Node.js client is able to make a connection with
+```
+let connectionString = process.env.REDIS_URL;
 
 if (connectionString === undefined) {  
   console.error("Please set the REDIS_URL environment variable");
@@ -80,7 +82,7 @@ Redis has a vast array of clients for applications to use. A fairly [comprehensi
 
 ## TLS and self-signed certificate support
 
-All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption. For {{site.data.keyword.databases-for-redis}}, this means supporting the unofficial `rediss:` protocol in connection strings. 
+All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption.
 
 If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page, where it is used to connect the `redis-cli` application.
 
