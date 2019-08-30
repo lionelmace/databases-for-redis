@@ -26,7 +26,7 @@ You need to have an [{{site.data.keyword.cloud_notm}} account](https://ibm.biz/d
 
 And a {{site.data.keyword.databases-for-redis}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-redis/). Give your deployment a memorable name that appears in your account's Resource List.
 
-[Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html) and the [Cloud Databases CLI Plugin](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line, and the plugin contains the commands that you use to communicate with your database deployments.
+[Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html) and the [Cloud Databases CLI Plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference). The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line, and the plugin contains the commands that you use to communicate with your database deployments.
 
 ## 1. Setting the Admin Password
 
@@ -48,7 +48,7 @@ chmod +x redli
 sudo cp redli /usr/local/bin
 ```
 
-Unfortunately, the native redis-cli client does not have support for TLS/SSL connections, and deployments require that  connections are secure. If you want to use redis-cli, you can set up something like [stunnel]() to handle the TLS/SSL connection. More information is on the [Connecting with a cli client]() page.
+Unfortunately, the native redis-cli client does not have support for TLS/SSL connections, and deployments require that  connections are secure. If you want to use redis-cli, you can set up something like [stunnel](https://www.stunnel.org/index.html) to handle the TLS/SSL connection. More information is on the [Connecting with a cli client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client#connecting-with-redis-cli) page.
 {: .tip}
 
 ## 3. Connecting with Redli and the IBM Cloud CLI
