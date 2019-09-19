@@ -69,6 +69,8 @@ You can also set up a connection to your deployment through redli yourself witho
 
 Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment. The three pieces you need are the self-signed certificate, the certificate name, and the connection string in the _CLI endpoint_ field. 
 
+![The CLI Connections Panel](images/getting-started-connection-cli.png)
+
 Save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Remember where the file is saved.
 
 The connection string in the _CLI endpoint_ field is the fully-formatted command to make a CLI connection to your deployment using redli. Navigate to where you have saved the certificate on your system or provide the full path to the certificate to the `REDIS_CERTFILE` environment variable. Set the admin username and password in the environment as `USERNAME` and `PASSWORD`. Use the CLI connection string to start redli.
