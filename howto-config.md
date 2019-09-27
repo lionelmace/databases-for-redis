@@ -55,7 +55,7 @@ Many of the settings are used to configure Redis as a cache. For more informatio
 
 Setting|Default|Notes
 ----------|-----|-----------
-[`maxmemory`](https://redis.io/topics/memory-optimization#memory-allocation) | 85% of your deployment's memory | Determines the amount of data you can store in Redis.
+[`maxmemory`](https://redis.io/topics/memory-optimization#memory-allocation) | 80% of your deployment's memory | Determines the amount of data you can store in Redis.
 [`appendonly`](https://redis.io/topics/persistence#append-only-file)| `yes` | Enables or Disables Redis persistence.
 [`maxmemory-policy`](https://redis.io/topics/lru-cache#eviction-policies) |`noeviction` | Determines eviction behavior when `maxmemory` limit is reached.
 [`maxmemory-samples`](https://redis.io/topics/lru-cache#approximated-lru-algorithm) | `5`| Tunes LRU eviction algorithm when Redis is configured as a cache.

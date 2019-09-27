@@ -23,7 +23,7 @@ subcollection: databases-for-redis
 
 ## Memory Policies
 
-By default, deployments are configured with a `noeviction` policy. All data is kept in memory until the `maxmemory` limit is reached and Redis returns an error if the memory limit is exceeded. The `maxmemory` is set to 85% of a data node's available memory, so your node doesn't run out of system resources. For example, the minimum size deployment has 1 GB RAM per node, and its `maxmemory` is set to 858993459 bytes.
+By default, deployments are configured with a `noeviction` policy. All data is kept in memory until the `maxmemory` limit is reached and Redis returns an error if the memory limit is exceeded. The `maxmemory` is set to 80% of a data node's available memory, so your node doesn't run out of system resources. 
 
 You can scale the amount of memory to accommodate more data, and you can configure the `maxmemory` setting to tune memory usage. The [Redis documentation](https://redis.io/topics/memory-optimization#memory-allocation) has some good information on memory behavior and tuning `maxmemory`.
 

@@ -28,7 +28,7 @@ To configure the cache, you adjust the `maxmemory` and the `maxmemory` settings 
 
 ### `maxmemory`
 
-By default, `maxmemory` is set to 85% of a data node's available memory, so your node doesn't run out of system resources. You can adjust this setting, but it is recommended that you set a reasonable limit. Otherwise, your data can take all the available memory and your deployment runs out of resources.
+By default, `maxmemory` is set to 80% of a data node's available memory, so your node doesn't run out of system resources. You can adjust this setting, but it is recommended that you set a reasonable limit. Otherwise, your data can take all the available memory and your deployment runs out of resources.
 
 ### `maxmemory-policy`
 
