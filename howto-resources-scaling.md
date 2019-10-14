@@ -79,9 +79,9 @@ Count   2
 |   Adjustable              true
 |
 +   CPU
-|   Allocation              2
-|   Allocation per member   1
-|   Minimum                 2
+|   Allocation              0
+|   Allocation per member   0
+|   Minimum                 6
 |   Step Size               2
 |   Adjustable              true
 |
