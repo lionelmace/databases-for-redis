@@ -49,7 +49,7 @@ Also, your deployment is configured with `maxmemory` is set to use 80% of the no
 If you [configured Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
 
 **Dedicated Cores** - 
-You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployment is then allocated the number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts.
+You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts.
 
 A few scaling operations can be more long running than others. Enabling dedicated cores moves your deployment to its own host and can take longer than just adding more cores. Similarly, drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 {: .tip}
