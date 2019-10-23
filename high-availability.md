@@ -55,5 +55,5 @@ Checking your deployment's logs helps you monitor the state of HA and replicatio
 
 ## SLA
 
-{{site.data.keyword.databases-for-redis}} deployments conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-SLAs#SLAs).
+{{site.data.keyword.databases-for-redis}} deployments conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-slas).
 
