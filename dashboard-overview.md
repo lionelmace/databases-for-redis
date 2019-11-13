@@ -44,11 +44,11 @@ The _Connections_ panel contains connection strings for your deployment. Each ta
 
 Reference tables for the different connection types are available on the [Getting Credentials and Connection Strings](/docs/services/databases-for-redis?topic=databases-for-redis-connection-strings) page.
 
-Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service Endpoints Integration](/docs/services/databases-for-redis?topic=databases-for-redis-service-endpoints) page.
+Connection strings reflect whether your deployment uses public endpoints, private endpoints or both. You can configure which endpoints are available on your deployment. For more information, see the [Service Endpoints Integration](/docs/services/databases-for-redis?topic=cloud-databases-service-endpoints) page.
 
 ## Security
 
-Encryption at rest is enabled for all {{site.data.keyword.databases-for-redis}} deployments. If you brought your own encryption key from [Key Protect](/docs/services/databases-for-redis?topic=databases-for-redis-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
+Encryption at rest is enabled for all {{site.data.keyword.databases-for-redis}} deployments. If you brought your own encryption key from [Key Protect](/docs/services/databases-for-redis?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
 
 ## Instance Administration API
 
