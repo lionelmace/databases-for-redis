@@ -25,7 +25,7 @@ subcollection: databases-for-redis
 {{site.data.keyword.databases-for-redis_full}} use the following methods to protect data in transit or in storage.
 
 - All {{site.data.keyword.databases-for-redis}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.
-- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/services/databases-for-redis?topic=databases-for-redis-iam).
+- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/services/databases-for-redis?topic=cloud-databases-iam).
 - Access to the database is secured through the standard access controls provided by the database. These access controls are configured to require valid database-level credentials that are obtainable only through prior access to the database or through our Management Console UI or API.
 - All {{site.data.keyword.databases-for-redis}} storage is provided on storage encrypted with [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect integration](/docs/services/databases-for-redis?topic=cloud-databases-key-protect). 
 - IP Whitelisting - All deployments support [whitelisting IP addresses](/docs/services/databases-for-redis?topic=cloud-databases-whitelisting) to restrict access to the service.
@@ -34,7 +34,7 @@ subcollection: databases-for-redis
 ## Data Resilience
 
 - [Backups](/docs/services/databases-for-redis?topic=cloud-databases-dashboard-backups) for your deployment are included, unless you [configure Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache). The {{site.data.keyword.databases-for-redis}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) and are also [encrypted](/docs/services/cloud-object-storage?topic=cloud-object-storage-security).
-- All {{site.data.keyword.databases-for-redis}} deployments are configured with replication to provide both data resilience and [high-availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availbility). Deployments contain a cluster with two data members in a master/replica configuration and state is managed with a quorum of three [Redis sentinels](https://redis.io/topics/sentinel).
+- All {{site.data.keyword.databases-for-redis}} deployments are configured with replication to provide both data resilience and [high-availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availability). Deployments contain a cluster with two data members in a master/replica configuration and state is managed with a quorum of three [Redis sentinels](https://redis.io/topics/sentinel).
 - If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations.
  
