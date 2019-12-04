@@ -63,7 +63,7 @@ You are able to use `CONFIG SET` directly from a Redis cli-client, but changes m
 
 For example, the Redis documentation recommends the `allkeys-lru` setting as a good starting place for a general-use cache. It's also fine to leave the `maxmemory` and `maxmemory-samples` at their default values. So to configure the cache from the CLI, you can use
 ```
-ibmcloud cdb deployment-configuration <deployment name or CRN> {"configuration":{"maxmemory-policy":"allkeys-lru", "appendonly":"no", "stop-writes-on-bgsave-error":"no"}}
+ibmcloud cdb deployment-configuration '<deployment name or CRN>' '{"configuration":{"maxmemory-policy":"allkeys-lru", "appendonly":"no", "stop-writes-on-bgsave-error":"no"}}'
 ```
 
 To set up the same configuration through the API, you can use
