@@ -7,17 +7,11 @@ Databases For Redis
 	{: .navgroup id="learn"}
 	getting-started.md
 	[What is Databases for Redis?](https://www.ibm.com/cloud/databases-for-redis)
-
-	{: .topicgroup}
-	Service Overview
-		dashboard-overview.md
-		high-availability.md
-		performance.md
-		security-compliance.md
-		pricing.md
-
-	/cloud-databases/cloud-databases-tutorial-k8s-app
-	/cloud-databases/cloud-databases-tutorial-cf-app
+	learn-dashboard-overview.md
+	learn-high-availability.md
+	learn-performance.md
+	learn-security-compliance.md
+	learn-pricing.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
@@ -39,6 +33,9 @@ Databases For Redis
 	Configuring Redis
 		howto-config.md
 		howto-redis-cache.md
+
+	/cloud-databases/cloud-databases-tutorial-k8s-app
+	/cloud-databases/cloud-databases-tutorial-cf-app
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
