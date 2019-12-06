@@ -16,7 +16,7 @@ subcollection: databases-for-redis
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Security, and Compliance
+# Security and Compliance
 {: #security-compliance}
 
 
