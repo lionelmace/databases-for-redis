@@ -66,10 +66,15 @@ Many API calls require the ID of the database deployment. The database deploymen
 
 For more information about the {{site.data.keyword.cloud_notm}} databases API, see the [API reference](https://{DomainName}/apidocs/cloud-databases-api) page.
 
+## Resources
+
+The resources tab contains information and configuration options on the size and resource usage of your deployment. You can 
+- [Scale disk, memory, and CPU](/docs/services/databases-for-redis?topic=databases-for-redis-resources-scaling)
+- [Configure Autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling)
+
 ## Settings
 
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
-- [scale](/docs/services/databases-for-redis?topic=databases-for-redis-resources-scaling)
 - [change the admin password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password)
 - [configure public and private endpoints](/docs/services/databases-for-redis?topic=cloud-databases-service-endpoints)
 - [implement or modify an IP whitelist](/docs/services/databases-for-redis?topic=cloud-databases-whitelisting)

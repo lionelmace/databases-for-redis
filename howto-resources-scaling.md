@@ -4,7 +4,7 @@ Copyright:
   years: 2019
 lastupdated: "2019-10-07"
 
-keywords: redis, databases, scaling
+keywords: redis, databases, scaling, manual scaling, disk I/O, memory, CPU
 
 subcollection: databases-for-redis
 
@@ -17,7 +17,7 @@ subcollection: databases-for-redis
 {:pre: .pre}
 {:tip: .tip}
 
-# Resources and Scaling
+# Scaling Disk, Memory, and CPU
 {: #resources-scaling}
 
 A visual representation of your data members and their resource allocation is available on the _Settings_ tab of your deployment's _Manage_ page. 
