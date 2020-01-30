@@ -31,7 +31,8 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 
 When you [provision](/docs/services/databases-for-redis?topic=cloud-databases-provisioning#provisioning) a deployment, you can select the initial resource allocation of disk and memory. After provision, you can scale your deployment as it needs more resources.
 
-**Disk Usage** - 
+### Disk Usage
+
 By default, {{site.data.keyword.databases-for-redis}} uses disk for data persistence. Your disk allocation per data member has to be enough to store your data. When you add disk to the total allocation, it adds it to both members equally.
 
 Disk allocation also affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Scale disk to increase the IOPS your deployment can handle.
@@ -41,14 +42,16 @@ If you have configured Redis as a cache, persistence been disabled on your deplo
 You cannot scale down storage. You can recover space by backing up and restoring to a new deployment.
 {: .tip} 
 
-**Memory** - 
+### Memory
+
 By default, your deployment is configured with a `noeviction` policy  so your memory resources should be scaled to fit your data set. Each data node contains a copy of your data, so the total amount of memory you use is approximately twice the size of your data set. When you add memory to the total allocation, it adds memory to both members equally.
 
 Also, your deployment is configured with `maxmemory` is set to use 80% of the node's memory, so when scaling up memory to accommodate more data, you might also want to [adjust the `maxmemory` setting](/docs/services/databases-for-redis?topic=databases-for-redis-changing-configuration).
 
 If you [configured Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
 
-**Dedicated Cores** - 
+### Dedicated Cores
+
 You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts.Going from a 0 to a >0 CPU count provisions and moves your deployment to new hosts, and your databases are restarted as part of that move. Going from >0 to a 0 CPU count, moves your deployment to a shared host and also restarts your databases as part of the move.
 
 ## Scaling Considerations
