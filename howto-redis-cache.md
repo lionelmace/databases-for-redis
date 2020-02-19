@@ -20,9 +20,7 @@ subcollection: databases-for-redis
 # Configuring Redis as a Cache
 {: #redis-cache}
 
-{{site.data.keyword.databases-for-redis_full}} supports changing the [Redis database configuration](/docs/services/databases-for-redis?topic=databases-for-redis-changing-configuration), and you can use it to configure [Redis as a cache](https://redis.io/topics/lru-cache). When configured as a cache, Redis evicts old data in favor of new data according to the cache settings you define. Even when configured as a cache, {{site.data.keyword.databases-for-redis}} deployments 
-- still take a daily backup snapshot. It is not currently possible to disable backups on your deployment.
-- still writes some data to disk for high-availability. Redis relies on copying over an `.rdb` file to resync followers.
+{{site.data.keyword.databases-for-redis_full}} supports changing the [Redis database configuration](/docs/services/databases-for-redis?topic=databases-for-redis-changing-configuration), and you can use it to configure [Redis as a cache](https://redis.io/topics/lru-cache). When configured as a cache, Redis evicts old data in favor of new data according to the cache settings you define. Even when configured as a cache, {{site.data.keyword.databases-for-redis}} deployments still take a daily backup snapshot. It is not currently possible to disable backups on your deployment. They also write some data to disk for high-availability. Redis relies on copying over an `.rdb` file to resync followers.
 
 ## Cache Settings
 
