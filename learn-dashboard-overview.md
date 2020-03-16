@@ -88,7 +88,7 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
 - [Activity Tracker](/docs/services/databases-for-redis?topic=cloud-databases-activity-tracker)
 - [Logging](/docs/services/databases-for-redis?topic=cloud-databases-logging)
-- [Monitoring](/docs/services/databases-for-redis?topic=cloud-databases-monitoring)
+- [Monitoring](/docs/services/databases-for-redis?topic=databases-for-redis-sysdig-monitoring)
 
 ## Docs
 

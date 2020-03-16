@@ -23,7 +23,7 @@ subcollection: databases-for-redis
 
 ## Monitoring your deployment
 
-{{site.data.keyword.databases-for-redis}} deployments offer an integration with the [{{site.data.keyword.cloud_notm}} Monitoring service](/docs/services/databases-for-redis?topic=cloud-databases-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+{{site.data.keyword.databases-for-redis}} deployments offer an integration with the [Sysdig Monitoring service](/docs/services/databases-for-redis?topic=databases-for-redis-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
 
 ## Memory Policies
 
