@@ -1,12 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-redis" audience="service" category="databases" href="/docs/databases-for-redis?topic=databases-for-redis-getting-started" path="databases-for-redis"}
+{: .toc subcollection="databases-for-redis" audience="service" category="databases" href="/docs/databases-for-redis?topic=databases-for-redis-getting-started" console-page="/catalog/services/databases-for-redis" product-page="https://www.ibm.com/cloud/databases-for-redis" path="databases-for-redis"}
 Databases For Redis
 
 	{: .navgroup id="learn"}
 	getting-started.md
-	[What is Databases for Redis?](https://www.ibm.com/cloud/databases-for-redis)
+	[What is Redis?](https://www.ibm.com/cloud/learn/redis)
 	learn-dashboard-overview.md
 	learn-high-availability.md
 	learn-performance.md

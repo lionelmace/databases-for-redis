@@ -43,7 +43,7 @@ ibmcloud cdb user-password <deployment-name> admin <new-password>
 
 To get a feel for connecting, sending, and retrieving data with Redis, you might want to start with connecting with a CLI client. All Cloud Databases use TLS/SSL secured connections, so you have to use a Redis CLI client that has support for TLS/SSL, like [redli](https://github.com/IBM-Cloud/redli).
 
-To install redli, download and install the package for your system from its [releases page](https://github.com/IBM-Cloud/redli/releases). Un-compress the files, give the binary executable permissions, and move it to your path. For example, to install it on a Mac download the `redli....darwin_amd64.tar.gz` file and run
+To install redli, download and install the package for your system from its [releases page](https://github.com/IBM-Cloud/redli/releases). Uncompress the files, give the binary executable permissions, and move it to your path. For example, to install it on a Mac download the `redli....darwin_amd64.tar.gz` file and run
 ```
 tar zxvf redli_0.4.4_darwin_amd64.tar.gz
 chmod +x redli
@@ -73,7 +73,7 @@ Connection Strings for your deployment are displayed on the _Dashboard Overview_
 
 Save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Remember where the file is saved.
 
-The connection string in the _CLI endpoint_ field is the fully-formatted command to make a CLI connection to your deployment using redli. Navigate to where you have saved the certificate on your system or provide the full path to the certificate to the `REDIS_CERTFILE` environment variable. Set the admin username and password in the environment as `USERNAME` and `PASSWORD`. Use the CLI connection string to start redli.
+The connection string in the _CLI endpoint_ field is the fully formatted command to make a CLI connection to your deployment using redli. Navigate to where you have saved the certificate on your system or provide the full path to the certificate to the `REDIS_CERTFILE` environment variable. Set the admin username and password in the environment as `USERNAME` and `PASSWORD`. Use the CLI connection string to start redli.
 ```
 REDIS_CERTFILE=101afa63-91d0-11e9-a88d-5a059876d90f redli -u rediss://$USERNAME:$PASSWORD@da4103eb-f1ef-4f2d-8b41-0bfd98cb65bc.8117147f814b4b2ea643610826cd2046.databases.appdomain.cloud:30174/0
 ```

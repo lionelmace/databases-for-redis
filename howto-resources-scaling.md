@@ -66,7 +66,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 - Scaling operations are logged in [Activity Tracker](/docs/services/databases-for-redis?topic=cloud-databases-activity-tracker).
 
-- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/services/databases-for-etcd?topic=databases-for-redis-autoscaling) on your deployment.
+- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment.
 
 ## Scaling in the UI
 
