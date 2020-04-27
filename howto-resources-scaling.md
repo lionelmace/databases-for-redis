@@ -29,7 +29,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
 
-When you [provision](/docs/services/databases-for-redis?topic=cloud-databases-provisioning#provisioning) a deployment, you can select the initial resource allocation of disk and memory. After provision, you can scale your deployment as it needs more resources.
+When you [provision](/docs/databases-for-redis?topic=cloud-databases-provisioning#provisioning) a deployment, you can select the initial resource allocation of disk and memory. After provision, you can scale your deployment as it needs more resources.
 
 ### Disk Usage
 
@@ -46,9 +46,9 @@ You cannot scale down storage. You can recover space by backing up and restoring
 
 By default, your deployment is configured with a `noeviction` policy  so your memory resources should be scaled to fit your data set. Each data node contains a copy of your data, so the total amount of memory you use is approximately twice the size of your data set. When you add memory to the total allocation, it adds memory to both members equally.
 
-Also, your deployment is configured with `maxmemory` is set to use 80% of the node's memory, so when scaling up memory to accommodate more data, you might also want to [adjust the `maxmemory` setting](/docs/services/databases-for-redis?topic=databases-for-redis-changing-configuration).
+Also, your deployment is configured with `maxmemory` is set to use 80% of the node's memory, so when scaling up memory to accommodate more data, you might also want to [adjust the `maxmemory` setting](/docs/databases-for-redis?topic=databases-for-redis-changing-configuration).
 
-If you [configured Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
+If you [configured Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
 
 ### Dedicated Cores
 
@@ -64,9 +64,9 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 - A few scaling operations can be more long running than others. Enabling dedicated cores moves your deployment to its own host and can take longer than just adding more cores. Similarly, drastically increasing CPU, RAM, or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
-- Scaling operations are logged in [Activity Tracker](/docs/services/databases-for-redis?topic=cloud-databases-activity-tracker).
+- Scaling operations are logged in [Activity Tracker](/docs/databases-for-redis?topic=cloud-databases-activity-tracker).
 
-- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment.
+- If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment.
 
 ## Scaling in the UI
 

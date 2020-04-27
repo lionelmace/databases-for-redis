@@ -21,7 +21,7 @@ subcollection: databases-for-redis
 
 Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 ## Connection Strings for Applications
@@ -78,13 +78,13 @@ r = redis.StrictRedis(
     decode_responses=True)
 ```
 
-Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis site](https://redis.io/clients). Some useful things to keep in mind when choosing a client are features that allow you to easily design your application for the cloud, like configuring [high-availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availability), security, and self-signed certificate support.
+Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis site](https://redis.io/clients). Some useful things to keep in mind when choosing a client are features that allow you to easily design your application for the cloud, like configuring [high-availability](/docs/databases-for-redis?topic=databases-for-redis-high-availability), security, and self-signed certificate support.
 
 ## TLS and self-signed certificate support
 
 All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption.
 
-If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page, where it is used to connect the `redis-cli` application.
+If your driver does not support the `rediss:` protocol or TLS/SSL connections, it is still possible to tunnel connections to the Redis database endpoint by using a TLS/SSL tunnel application such as Stunnel. An example of using Stunnel can be found on the [Connecting with a Command-line Client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page, where it is used to connect the `redis-cli` application.
 
 Deployments also come with a self-signed certificate so you can verify the server upon starting a connection. While not required, it is an additional security step that is recommended if your client supports it.
 

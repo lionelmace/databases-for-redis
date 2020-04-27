@@ -19,11 +19,11 @@ subcollection: databases-for-redis
 # Performance
 {: #performance}
 
-{{site.data.keyword.databases-for-redis_full}} deployments deployments can be both manually [to your usage](/docs/services/databases-for-redis?topic=databases-for-redis-resources-scaling), or configured to [autoscale](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
+{{site.data.keyword.databases-for-redis_full}} deployments deployments can be both manually [to your usage](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling), or configured to [autoscale](/docs/databases-for-redis?topic=databases-for-redis-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
 
 ## Monitoring your deployment
 
-{{site.data.keyword.databases-for-redis}} deployments offer an integration with the [Sysdig Monitoring service](/docs/services/databases-for-redis?topic=databases-for-redis-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/services/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+{{site.data.keyword.databases-for-redis}} deployments offer an integration with the [Sysdig Monitoring service](/docs/databases-for-redis?topic=databases-for-redis-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
 
 ## Memory Policies
 
@@ -31,7 +31,7 @@ By default, deployments are configured with a `noeviction` policy. All data is k
 
 You can scale the amount of memory to accommodate more data, and you can configure the `maxmemory` setting to tune memory usage. The [Redis documentation](https://redis.io/topics/memory-optimization#memory-allocation) has some good information on memory behavior and tuning `maxmemory`.
 
-You can also configure your deployment to use [Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache), allowing Redis to evict data out of memory once the memory limit is reached. 
+You can also configure your deployment to use [Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache), allowing Redis to evict data out of memory once the memory limit is reached. 
 
 ## Disk IOPS
 

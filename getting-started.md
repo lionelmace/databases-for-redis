@@ -24,7 +24,7 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://ibm.biz/databases-for-redis-signup){:new_window}.
 
-- And a {{site.data.keyword.databases-for-redis}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-redis/). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for-redis}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/databases-for-redis/). Give your deployment a memorable name that appears in your account's Resource List.
 
 - [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)) and the [Cloud Databases CLI Plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference). The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line, and the plugin contains the commands that you use to communicate with your database deployments.
 
@@ -50,7 +50,7 @@ chmod +x redli
 sudo cp redli /usr/local/bin
 ```
 
-Unfortunately, the native redis-cli client does not have support for TLS/SSL connections, and deployments require that  connections are secure. If you want to use redis-cli, you can set up something like [stunnel](https://www.stunnel.org/index.html) to handle the TLS/SSL connection. More information is on the [Connecting with a cli client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client#connecting-with-redis-cli) page.
+Unfortunately, the native redis-cli client does not have support for TLS/SSL connections, and deployments require that  connections are secure. If you want to use redis-cli, you can set up something like [stunnel](https://www.stunnel.org/index.html) to handle the TLS/SSL connection. More information is on the [Connecting with a cli client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client#connecting-with-redis-cli) page.
 {: .tip}
 
 ## 3. Connecting to Redis
@@ -104,9 +104,9 @@ The Redis documentation has an introduction to the many Redis data types, with e
 If you are just using Redis for the first time, it is a good idea to take a tour through the [official Redis documentation](https://redis.io/documentation). 
 
 If you are planning to use Databases-for-Redis for your applications, check out some of our other pages on 
-- [Connecting an external application](/docs/services/databases-for-redis?topic=databases-for-redis-external-app)
-- [Connecting an IBM Cloud application](/docs/services/databases-for-redis?topic=databases-for-redis-ibmcloud-app)
+- [Connecting an external application](/docs/databases-for-redis?topic=databases-for-redis-external-app)
+- [Connecting an IBM Cloud application](/docs/databases-for-redis?topic=databases-for-redis-ibmcloud-app)
 
 Also, to ensure the stability of your applications and your database, check out the pages on 
-- [High-Availability](/docs/services/databases-for-redis?topic=databases-for-redis-high-availability)
-- [Performance](/docs/services/databases-for-redis?topic=databases-for-redis-performance)
+- [High-Availability](/docs/databases-for-redis?topic=databases-for-redis-high-availability)
+- [Performance](/docs/databases-for-redis?topic=databases-for-redis-performance)

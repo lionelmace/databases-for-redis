@@ -22,7 +22,7 @@ subcollection: databases-for-redis
 
 The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username and password to connect and issue commands. The username for Redis is always "admin".
 
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/services/databases-for-redis?topic=databases-for-redis-admin-password) page.
+You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel.
@@ -91,7 +91,7 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information to connect, see the [Connecting an External Application](/docs/services/databases-for-redis?topic=databases-for-redis-external-app) page.
+For more information on using this information to connect, see the [Connecting an External Application](/docs/databases-for-redis?topic=databases-for-redis-external-app) page.
 
 ### The CLI Section
 
@@ -110,5 +110,5 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information, see the [Connecting with a command line client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page.
+For more information on using this information, see the [Connecting with a command line client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page.
 

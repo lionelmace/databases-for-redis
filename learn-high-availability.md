@@ -27,7 +27,7 @@ subcollection: databases-for-redis
 
 By default, data persistence is enabled on all deployments and your data is written to disk. The data persistence model uses [preamble snapshots and AOF (Append Only File)](https://redis.io/topics/persistence). The interval for Redis to write to disk (fsync) is set to [once every second](https://redis.io/topics/persistence#how-durable-is-the-append-only-file). 
 
-You can turn off data persistence, which is useful for [configuring Redis as a cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache).
+You can turn off data persistence, which is useful for [configuring Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache).
 
 ## HA for your Application 
 
@@ -49,7 +49,7 @@ Several minutes of database unavailability or connection interruptions are not e
 
 ## Monitoring the state of your databases
 
-{{site.data.keyword.databases-for-redis}} has [{{site.data.keyword.la_full_notm}} integration](/docs/services/databases-for-redis?topic=cloud-databases-logging) so that you can view live and historical logs.
+{{site.data.keyword.databases-for-redis}} has [{{site.data.keyword.la_full_notm}} integration](/docs/databases-for-redis?topic=cloud-databases-logging) so that you can view live and historical logs.
 
 Checking your deployment's logs helps you monitor the state of HA and replication for your deployment. If you are having persistent issues with your applications, logs can also provide insight to what is happening on your databases when you are experiencing connection failures or other disruptions. 
 

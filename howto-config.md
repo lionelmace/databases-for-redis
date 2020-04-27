@@ -54,9 +54,9 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 
 ## Available Configuration settings
 
-To check the current value of a setting, use [`CONFIG GET`](https://redis.io/commands/config-get) from a [CLI client](/docs/services/databases-for-redis?topic=databases-for-redis-connecting-cli-client). You can check all of the settings by using `CONFIG GET *`.
+To check the current value of a setting, use [`CONFIG GET`](https://redis.io/commands/config-get) from a [CLI client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client). You can check all of the settings by using `CONFIG GET *`.
 
-Many of the settings are used to configure Redis as a cache. For more information, see the [Configuring Redis as a Cache](/docs/services/databases-for-redis?topic=databases-for-redis-redis-cache) page.
+Many of the settings are used to configure Redis as a cache. For more information, see the [Configuring Redis as a Cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache) page.
 
 Setting|Default|Notes
 ----------|-----|-----------
