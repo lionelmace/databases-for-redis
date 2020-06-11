@@ -19,7 +19,10 @@ subcollection: databases-for-redis
 # Setting the Admin Password
 {: #admin-password}
 
-The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username and password to connect and issue commands. The username for Redis is always "admin". 
+The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled, and comes with an admin user. 
+
+If you are using Redis 5.x and below, the admin user is the only user for your deployment. Redis didn't have support for multiple users until version 6.x.
+{: .tip}
 
 You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Password_ panel to set a new admin password.
 
@@ -42,7 +45,7 @@ The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service 
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/admin' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
--d '{"password":"newrootpasswordsupersecure21"}'
+-d '{"password":"newradminpasswordsupersecure21"}'
 ```
 
 For more information, see the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#set-database-level-user-s-password).

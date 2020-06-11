@@ -22,9 +22,9 @@ subcollection: databases-for-redis
 
 You can access your Redis database directly from a command-line client. A command-line client allows for direct interaction and monitoring of the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, installing and modifying scripts, and other management activities.
 
-## Admin Connection Strings
+## Connection Strings
 
-Redis only supports a single-user, so you use the same credentials for all applications, including the command-line clients, that need to connect to your deployment. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
@@ -40,9 +40,6 @@ Field Name|Index|Description
 {: caption="Table 1. `redis`/`cli` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
-
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
-{: .tip}
 
 ## Installing `redli`
 
