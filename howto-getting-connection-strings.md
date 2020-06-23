@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017,2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-23"
 
 keywords: redis, databases, connection strings
 
