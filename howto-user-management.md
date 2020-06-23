@@ -26,7 +26,7 @@ subcollection: databases-for-redis
 
 When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given access to the admin user. If you are using Redis 5.x and below, the admin user is the only user available on your deployment. If you are using Redis 6.x and above you have the admin user and the ability to create additional users and credentials.
 
-You have to [set the admin password](/docs/databases-for-redis?topic-databases-for-redis-admin-password) in order to use it to connect to your deployment.
+You have to [set the admin password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) in order to use it to connect to your deployment.
 
 ## Redis roles
 
