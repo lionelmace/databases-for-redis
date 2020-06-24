@@ -95,7 +95,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
     - The host name and port to connect to. (`connect=`portal972-7.bmix-lon-yp-38898e17-ff6f-4340-9da8-2ba24c41e6d8.composeci-us-ibm-com.composedb.com:24370`)
     - The path to the certificate.
     
-    ```text
+    ```shell
     [redis-cli]
     client=yes  
     accept=127.0.0.1:6830  
