@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2019
-lastupdated: "2019-04-10"
+  years: 2017,2019,2020
+lastupdated: "2020-06-23"
 
 keywords: redis, databases
 
@@ -22,9 +22,9 @@ subcollection: databases-for-redis
 
 You can access your Redis database directly from a command-line client. A command-line client allows for direct interaction and monitoring of the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, installing and modifying scripts, and other management activities.
 
-## Admin Connection Strings
+## Connection Strings
 
-Redis only supports a single-user, so you use the same credentials for all applications, including the command-line clients, that need to connect to your deployment. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
@@ -40,9 +40,6 @@ Field Name|Index|Description
 {: caption="Table 1. `redis`/`cli` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
-
-You have to set the admin password before you connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
-{: .tip}
 
 ## Installing `redli`
 
@@ -71,12 +68,14 @@ $ redli --uri rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7b
 There are other connection options and parameters that are supported by `redli`. For more information, see its documentation in the [`redli` GitHub repo](https://github.com/IBM-Cloud/redli).
 
 ## Installing `redis-cli`
- 
+{: #installing-redis-cli}
+
 `redis-cli` is the official supported command-line interface for Redis. Unfortunately, it does not support TLS connections.
 
 If you do choose to use `redis-cli`, there are some extra configuration steps. It comes as part of the Redis package, so you need Redis installed locally to use it. On macOS, instal [brew](http://brew.sh) and then use `brew install redis` to get up and running. On Linux, refer to your distributions package manager for the latest Redis package or, if you are so inclined, [download the source](http://redis.io/download) and build it yourself. 
 
 ## Connecting with `redis-cli`
+{: #connecting-with-redis-cli}
 
 `redis-cli` does not support TLS-enabled connections. If you want to use the `redis-cli` with an encrypted connection, you can set up a utility like [`stunnel`](https://www.stunnel.org/index.html), which wraps the `redis-cli` connection in TLS encryption.
 
@@ -96,7 +95,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
     - The host name and port to connect to. (`connect=`portal972-7.bmix-lon-yp-38898e17-ff6f-4340-9da8-2ba24c41e6d8.composeci-us-ibm-com.composedb.com:24370`)
     - The path to the certificate.
     
-    ```text
+    ```shell
     [redis-cli]
     client=yes  
     accept=127.0.0.1:6830  
