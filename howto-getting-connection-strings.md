@@ -1,6 +1,7 @@
 ---
+
 copyright:
-  years: 2017,2020
+  years: 2017, 2020
 lastupdated: "2020-06-23"
 
 keywords: redis, databases, connection strings
@@ -26,7 +27,7 @@ All users on your deployment can use the connection strings, including connectio
 
 ![Redis Connection Strings](images/connections_panel.png)
 
-+Your Redis deployment is provisioned with an admin user. You must set the admin password before you can use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
+Your Redis deployment is provisioned with an admin user. You must set the admin password before you can use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 ## Getting Connection Strings from the CLI

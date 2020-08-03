@@ -77,7 +77,7 @@ The resources tab contains information and configuration options on the size and
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - [change the admin password](/docs/databases-for-redis?topic=databases-for-redis-admin-password)
 - [configure public and private endpoints](/docs/databases-for-redis?topic=cloud-databases-service-endpoints)
-- [implement or modify an IP whitelist](/docs/databases-for-redis?topic=cloud-databases-whitelisting)
+- [implement or modify an IP allowlist](/docs/databases-for-redis?topic=cloud-databases-allowlisting)
 
 ## Backups
 

@@ -23,7 +23,7 @@ subcollection: databases-for-redis
 
 ## Database HA Features
 
-{{site.data.keyword.databases-for-redis}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with two data members in a master/replica configuration and kept in sync using asynchronous replication. High-availability is monitored and managed with three [Redis sentinels](https://redis.io/topics/sentinel).
+{{site.data.keyword.databases-for-redis}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with two data members in a primary/replica configuration and kept in sync using asynchronous replication. High-availability is monitored and managed with three [Redis sentinels](https://redis.io/topics/sentinel).
 
 By default, data persistence is enabled on all deployments and your data is written to disk. The data persistence model uses [preamble snapshots and AOF (Append Only File)](https://redis.io/topics/persistence). The interval for Redis to write to disk (fsync) is set to [once every second](https://redis.io/topics/persistence#how-durable-is-the-append-only-file). 
 
