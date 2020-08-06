@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2019
-lastupdated: "2019-04-19"
+lastupdated: "2020-08-06"
 
-keywords: redis, databases
+keywords: redis, databases, configs
 
 subcollection: databases-for-redis
 
@@ -27,19 +27,22 @@ To make a change, you send a JSON object with the settings that you want to chan
 ```
 {"configuration":{"maxmemory-policy":"allkeys-lru"}}
 ```
+{: .pre}
 to either the CLI or to the API. 
 
 ## Using the CLI
 
-You can check the current configuration of your deployment through the {{site.data.keyword.databases-for}} cli-plugin with the `cdb deployment-configuration-schema` command.
+You can view the configuration schema of possible settings through the {{site.data.keyword.databases-for}} cli-plugin with the `cdb deployment-configuration-schema` command.
 ```
 ibmcloud cdb deployment-configuration-schema <deployment name or CRN>
 ```
+{: .pre}
 
 To change your configuration, use the `cdb deployment-configuration` command. 
 ```
 ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING]
 ```
+{: .pre}
 
 The command reads the changes that you would like to make from the JSON object or a file. For more information, see the [reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration).
 
