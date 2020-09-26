@@ -88,7 +88,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
 1. Install `stunnel`. Use your package manager for Linux, Homebrew for Mac, or [download](https://www.stunnel.org/downloads.html) the appropriate package for your platform.
 
 2. Grab connection information.
-   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](/docs/databses-for-redis?topic=databases-for-redis-connection-strings#the-redis-section) that is provided for connecting external applications and drivers.
+   To set up a connection, `stunnel` needs the host, the port, and the certificate of your Redis deployment. Host and port are both available from the CLI "composed" connection string. They can also be found parsed out in the [table of connection information](/docs/databases-for-redis?topic=databases-for-redis-connection-strings#the-redis-section) that is provided for connecting external applications and drivers.
 
    The certificate is in the  "Base 64" field of the connection information. Copy, decode, and save the certificate to a file.
 
