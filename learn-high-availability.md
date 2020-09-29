@@ -53,5 +53,5 @@ Checking your deployment's logs helps you monitor the state of HA and replicatio
 
 ## High availability, disaster recovery, and SLA resources
 
-{{site.data.keyword.databases-for-redis}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/cloud-databases/cloud-databases-ha-dr) information and terms.
+{{site.data.keyword.databases-for-redis}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/docs/cloud-databases?topic=cloud-databases-ha-dr) information and terms.
 
