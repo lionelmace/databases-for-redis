@@ -42,7 +42,7 @@ Policy|Behavior
 `volatile-ttl` | Evicts keys that expire, and tries to evict keys with a shorter time to live (TTL) first.
 {: caption="Table 1. Available Redis eviction policies" caption-side="top"}
 
-Note on `volitile` and `allkeys`. When using an `allkeys` policy, the algorithm chooses which keys to evict from the set of all keys. When using a `volitile` policy, the algorithm chooses to evict keys that have either [expire](https://redis.io/commands/expire) or have a [time-to-live (TTL)](https://redis.io/commands/ttl) set. When using a `volitle` policy, if there are no keys that match the policy, no keys are evicted.
+Note on `volatile` and `allkeys`. When using an `allkeys` policy, the algorithm chooses which keys to evict from the set of all keys. When using a `volatile` policy, the algorithm chooses to evict keys that have either [expire](https://redis.io/commands/expire) or have a [time-to-live (TTL)](https://redis.io/commands/ttl) set. When using a `volatile` policy, if there are no keys that match the policy, no keys are evicted.
 
 ### Other settings
 

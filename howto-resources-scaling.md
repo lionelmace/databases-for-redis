@@ -24,7 +24,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 
 ## Resources Breakdown
 
-{{site.data.keyword.databases-for-redis}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a Redis deployment is 2048 MB, which equates to an initial size of 1024 MB per member with 512 MB increments available. The minimum RAM for a Redis deployment is 2048 MB, which equates an initial allocation of 1028 MB per member with 128 MB increments available.
+{{site.data.keyword.databases-for-redis}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a Redis deployment is 2048 MB, which equates to an initial size of 1024 MB per member with 512 MB increments available. The minimum RAM for a Redis deployment is 2048 MB, which equates an initial allocation of 1024 MB per member with 124 MB increments available.
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
