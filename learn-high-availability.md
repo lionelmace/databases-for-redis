@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-09-25"
+lastupdated: "2020-10-20"
 
 keywords: redis, databases, ha, dr
 
@@ -40,6 +40,11 @@ Many Redis clients have features for error checking and handling. For example,
 
 A good example of cloud-ready application development that uses the Node.js client `ioredis` is in the IBM Developer article [Error detection and handling with Redis](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/).
 
+For more information on connecting your applications to {{site.data.keyword.databases-for-redis}}, see the "Connecting to Databases for Redis" documentation relating to 
+- [Connecting to an IBM Cloud application](/docs/databases-for-redis?topic=databases-for-redis-ibmcloud-app), 
+- [Connecting an external application](/docs/databases-for-redis?topic=databases-for-redis-external-app) (including [TLS and self-signed certificate support](/docs/databases-for-redis?topic=databases-for-redis-external-app#tls-and-self-signed-certificate-support)), and 
+- [Connecting with a command line client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client).  
+ 
 In all cases, you must review your client's documentation to help you design a stable application that checks for connectivity, reconnects when disconnected, and retries commands when it makes sense for your application to do so.
 {: .tip}  
 
