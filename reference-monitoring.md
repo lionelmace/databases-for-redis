@@ -49,8 +49,10 @@ If you have deployments that are in a Single-zone Region (SZR) - `osl01`, `che01
 | [Max allowed memory for an instance.](#ibm_databases_for_redis_memory_limit_bytes) | 
 | [Total disk space for an instance.](#ibm_databases_for_redis_disk_total_bytes) | 
 | [Used CPU for an instance.](#ibm_databases_for_redis_cpu_used_percent) | 
-| [Used disk space for an instance.](#ibm_databases_for_redis_disk_used_bytes) | 
-| [Used memory for an instance.](#ibm_databases_for_redis_memory_used_bytes) | 
+| [Used disk space for an instance (byte)](#ibm_databases_for_redis_disk_used_bytes) | 
+| [Used disk space for an instance (percent)](#ibm_databases_for_redis_disk_used_percent) | 
+| [Used memory for an instance (byte)](#ibm_databases_for_redis_memory_used_bytes) | 
+| [Used memory for an instance (percent)](#ibm_databases_for_redis_memory_used_percent) | 
 {: caption="Table 1. Available Metrics Reference Table" caption-side="top"}
 
 ### IO utilization in percent 5 minute average
@@ -160,7 +162,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 ### Used disk space for an instance
 {: #ibm_databases_for_redis_disk_used_bytes}
 
-How much disk your deployment is using.
+How much disk your deployment is using in bytes.
 
 | Metadata | Description |
 |----------|-------------|
@@ -170,10 +172,22 @@ How much disk your deployment is using.
 | `Segment By` | `Service instance` |
 {: caption="Table 10. Used disk space for an instance metric metadata" caption-side="top"}
 
+{: #ibm_databases_for_redis_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `PERCENT` |
+| `Segment By` | `Service instance` |
+{: caption="Table 10.5: Used disk space for an instance metric metadata" caption-side="top"}
+
 ### Used memory for an instance
 {: #ibm_databases_for_redis_memory_used_bytes}
 
-How much memory your deployment is using.
+How much memory your deployment is using in bytes.
 
 | Metadata | Description |
 |----------|-------------|
@@ -182,6 +196,18 @@ How much memory your deployment is using.
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
 {: caption="Table 11. Used memory for an instance metric metadata" caption-side="top"}
+
+{: #ibm_databases_for_redis_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `PERCENT` |
+| `Segment By` | `Service instance` |
+{: caption="Table 11.5: Used memory for an instance metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: attributes}
