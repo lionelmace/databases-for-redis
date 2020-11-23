@@ -55,7 +55,7 @@ Unfortunately, the native redis-cli client does not have support for TLS/SSL con
 
 ## 3. Connecting to Redis
 
-### Method a. - Connecting through IBM Cloud CLI
+### Method A. - Connecting through IBM Cloud CLI
 
 Assuming at this point you have redli, ibmcloud CLI, and the cloud databases plug-in installed, you can start a connection to your deployment. Login with `ibmcloud login`, and connect with `ibmcloud cdb cxn -s`.
 ```
@@ -63,15 +63,15 @@ ibmcloud cdb cxn -s <deployment-name>
 ```
 It prompts for the admin password and uses redli to connect. You can now store and retrieve data with your Redis deployment. 
 
-### Method b. -  Connecting through Redli
+### Method B. -  Connecting through Redli
 
 You can also set up a connection to your deployment through redli yourself without using the ibmcloud CLI.
 
-Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment. The three pieces you need are the self-signed certificate, the certificate name, and the connection string in the _CLI endpoint_ field. 
+Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment. The three pieces you need are the self-signed certificate, the certificate name, and the connection string in the _CLI endpoint_ field. 
 
-![The CLI Connections Panel](images/getting-started-connection-cli.png)
+![CLI Endpoints panel](images/cli-endpoints-pane.png)
 
-Save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Remember where the file is saved.
+Download, or save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Remember where the file is saved.
 
 The connection string in the _CLI endpoint_ field is the fully formatted command to make a CLI connection to your deployment using redli. Navigate to where you have saved the certificate on your system or provide the full path to the certificate to the `REDIS_CERTFILE` environment variable. Set the admin username and password in the environment as `USERNAME` and `PASSWORD`. Use the CLI connection string to start redli.
 ```

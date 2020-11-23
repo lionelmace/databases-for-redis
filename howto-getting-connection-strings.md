@@ -22,7 +22,7 @@ subcollection: databases-for-redis
 
 The {{site.data.keyword.databases-for-redis_full}} service is provisioned with authentication enabled. You need a username, password, and connection strings to connect and issue commands. In Redis 5.x and prior, there is only the admin user. Redis did not introduce support for multiple users until Redis 6.
 
-Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel.
+Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel.
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
 ![Redis Connection Strings](images/connections_panel.png)
