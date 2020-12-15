@@ -84,7 +84,7 @@ The alias appears in the list of _Cloud Foundry Apps_ in your _Resource List_. M
 
 Cloud Foundry uses a manifest file - `manifest.yml` to associate an application with another {{site.data.keyword.cloud_notm}} service.
 
-To create the file, open a new file and add the text:
+To create the file, open a new file and add the example text:
   ```
   ---
   applications:
@@ -98,7 +98,8 @@ To create the file, open a new file and add the text:
 
 - Change the route value to something unique. The route that you choose determines the subdomain of your application's URL: `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
 - Change the name value. The value that you choose is the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
-- Update the services value to match  Cloud Foundry alias of your {{site.data.keyword.databases-for-redis}} deployment.
+- Update the services value to match the Cloud Foundry alias of your {{site.data.keyword.databases-for-redis}} deployment.
+- Update the memory value if your specific application requires more memory. 
 
 If you have an existing application that you are just adding a Cloud Databases deployment to, then you probably already have a `manifest.yml`. In that case, you just need to be sure to add the alias of your deployment under `services`.
 
