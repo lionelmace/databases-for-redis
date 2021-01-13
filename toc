@@ -28,6 +28,7 @@ Databases For Redis
 		connecting-ibmcloud-app.md
 		connecting-external.md
 		connecting-cli-client.md
+		/cloud-databases/cloud-databases-vpes
 
 	{: .topicgroup}
 	Resources and Scaling
@@ -46,6 +47,10 @@ Databases For Redis
 	Tutorials
 		/cloud-databases/cloud-databases-tutorial-k8s-app
 		/cloud-databases/cloud-databases-tutorial-cf-app
+	{: .navgroup-end}
+	
+	{: .navgroup id="help"}
+	ts-connect.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
