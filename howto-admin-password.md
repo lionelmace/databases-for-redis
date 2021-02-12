@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2019, 2020
-lastupdated: "2020-06-23"
+  years: 2017, 2021
+lastupdated: "2021-02-04"
 
 keywords: redis, databases
 
@@ -24,9 +24,9 @@ The {{site.data.keyword.databases-for-redis_full}} service is provisioned with a
 If you are using Redis 5.x and below, the admin user is the only user for your deployment. Redis didn't have support for multiple users until version 6.x.
 {: .tip}
 
-You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Password_ panel to set a new admin password.
+You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Database Admin Password_ panel to set a new admin password.
 
-![The Admin Password Panel in _Settings_](images/settings-admin-password.png)
+![The Chnage Database Admin Password Panel in _Settings_](images/settings-admin-password.png)
 
 ## Setting the admin password via the command line
 

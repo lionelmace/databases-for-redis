@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-04"
 
 subcollection: databases-for-redis
 
@@ -32,9 +32,9 @@ Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases
 
 ## 1. Setting the Admin Password
 
-You have to set the admin password before you can use it to connect. To set the password through the UI, open the _Settings_ tab and use the _Change Password_ panel to set a new admin password.
+You have to set the admin password before you can use it to connect. To set the password through the UI, open the _Settings_ tab and use the _Change Database Admin Password_ panel to set a new admin password.
 
-![The Admin Password Panel in _Settings_](images/settings-admin-password.png)
+![The Chnage Database Admin Password Panel in _Settings_](images/settings-admin-password.png)
 
 Alternatively, use the `cdb user-password` command from the {{site.data.keyword.cloud_notm}} CLI cloud databases plugin to set the admin password with the command line.
 ```
