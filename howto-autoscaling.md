@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2020
-lastupdated: "2020-01-22"
+  years: 2020, 2021
+lastupdated: "2021-02-04"
 
 keywords: redis, databases, scaling, autoscaling, disk I/O, memory
 
