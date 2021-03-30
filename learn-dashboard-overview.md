@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2018, 2020
-lastupdated: "2020-04-23"
+  years: 2018, 2021
+lastupdated: "2021-03-30"
 
 keywords: deployment, crn, task, gui, api endpoint
 
@@ -36,7 +36,7 @@ The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which u
 
 ## Recent Tasks
 
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [Activity Tracker integration](/docs/databases-for-redis?topic=cloud-databases-activity-tracker).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/databases-for-redis?topic=cloud-databases-activity-tracker).
 
 ## Connections
 
@@ -86,9 +86,9 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
-- [Activity Tracker](/docs/databases-for-redis?topic=cloud-databases-activity-tracker)
-- [Logging](/docs/databases-for-redis?topic=cloud-databases-logging)
-- [Monitoring](/docs/databases-for-redis?topic=databases-for-redis-sysdig-monitoring)
+- [{{site.data.keyword.at_full}}](/docs/databases-for-redis?topic=cloud-databases-activity-tracker)
+- [{{site.data.keyword.loganalysisfull}}](/docs/databases-for-redis?topic=cloud-databases-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-redis?topic=databases-for-redis-sysdig-monitoring)
 
 ## Docs
 
