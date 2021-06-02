@@ -13,6 +13,7 @@ subcollection: databases-for-redis
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
+{:note: .note}
 {:pre: .pre}
 {:tip: .tip}
 
@@ -32,7 +33,7 @@ You have to [set the admin password](/docs/databases-for-redis?topic=databases-f
 
 The admin user and all other users on your deployment have full access to the set of redis commands, with the exception of the subcommand `configure set` - this includes the admin user.
 
-In Redis 6.x and above, any user that you create, whether through _Service Credentials_, the CLI, the API, or directly in Redis all have this same set of access. You can use Redis itself to create roles with access limited to specific keys or ranges of keys. Refer to the redis documentation for [commands to manage roles](https://redis.io/topics/acl#configuring-acls-using-the-acl-command).
+In Redis 6.x and above, any user that you create; whether through _Service Credentials_, the CLI, API, or directly in Redis; have the same access. You cannot use Redis itself to create users or roles with access limited to specific keys or ranges of keys, as they are not propagated automatically in a cluster deployment. All other means to manage users ensure propagation across the cluster.
 
 ## Additional Users - Redis 6.x only
 
@@ -80,3 +81,6 @@ There are four reserved users on your deployment. Modifying these users will cau
 - `sentinel-user` - The user account for sentinels to handle monitoring and failovers.
 - `admin` - The default user provided to access your deployment.
 
+{: note}
+Starting with Redis 6.x, IBM Cloud Databases for Redis disables the default user. Instead, to stay in sync with the new ACL support, every deployment gets a dedicated admin user for full support of ACLs. Newly provisioned users via the UI, API, or CLI will adhere to this pattern, as well. If your drivers don't support ACL at this point in time, we recommend using Redis 5 and switching to Redis 6 once your drivers are ready to support ACL.
+{: note}
