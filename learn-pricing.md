@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017,2020
-lastupdated: "2020-02-18"
+lastupdated: "2021-10-20"
 
 keywords: redis, databases, pricing, resources, scaling
 
