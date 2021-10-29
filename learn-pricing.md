@@ -26,7 +26,7 @@ A {{site.data.keyword.databases-for-redis}} Standard plan deploys as one highly 
 
 **Disk storage per data member** - gigabytes of disk that is allocated to a {{site.data.keyword.databases-for-redis}} data member, or the size of your data.  
 **RAM per data member** - gigabytes of RAM allocated to a {{site.data.keyword.databases-for-redis}} data member.  
-**Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-redis}} deployment. 
+**Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-redis}} deployment.
 
 Resources | Breakdown | Price
 -------|-------|-------
@@ -40,11 +40,22 @@ Total per hour = $.016/Hour
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
 
+## IBM Cloud Databases enabled by IBM Cloud Satellite Pricing
+
+{{site.data.keyword.databases-for-redis}} deployments are deployable into IBM Cloud Satellite locations. The management fee for these Cloud Databases is $45 per vCPU per month, with a 6 vCPU minimum.
+
+Resources | Breakdown | Price
+-------|-------|-------
+6 vCPUs per month | 2 members x 6 GB x $45 | $540
+{: caption="Table 2. Pricing example for  6 vCPUs and two data members" caption-side="top"}
+
+Total per month = $49.80/Month
+
 ## Using the Pricing Calculator
 
 Templates are provided for ease of use and provide balanced resource allocations appropriate for general purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as desired.
 
-For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-redis}} catalog page](https://cloud.ibm.com/catalog/databases-for-redis). Input your total consumption across two data members into the calculator. This is roughly double the size of your data because your data is replicated to both members. For example, 1 GB of disk and 1 GB of RAM across two data members would be priced at 2 GB of disk and 2 GB of RAM respectively. 
+For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-redis}} catalog page](https://cloud.ibm.com/catalog/databases-for-redis). Input your total consumption across two data members into the calculator. This is roughly double the size of your data because your data is replicated to both members. For example, 1 GB of disk and 1 GB of RAM across two data members would be priced at 2 GB of disk and 2 GB of RAM respectively.
 
 ![Pricing calculator estimation with 1 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png)
 
@@ -68,4 +79,3 @@ Disk | 5 GB per member | 4 TB per member | 1024 MB per member
 RAM | 1 GB per member | 112 GB per member | 128 MB per member
 CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member
 {: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
-
