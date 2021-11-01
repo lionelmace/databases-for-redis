@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2019, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2021-11-01"
 
 keywords: redis, databases
 
@@ -19,7 +19,7 @@ subcollection: databases-for-redis
 # Connecting an external application
 {: #external-app}
 
-Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the *Endpoints* panel of your deployment's *Overview*, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 ## Connection Strings for Applications
 
@@ -37,17 +37,19 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|Base64|A base64 encoded version of the certificate.
-{: caption="Table 1. `redis`/`URI` connection information" caption-side="top"}
+{: caption="Table 1. redis/URI connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 Redis drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, if you set the connection string in the environment variable `REDIS_URL`
-```
+
+```bash
 export REDIS_URL=rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0
 ```
 
-Then the Node.js client is able to make a connection with
-```
+then the Node.js client is able to make a connection with
+
+```bash
 let connectionString = process.env.REDIS_URL;
 
 if (connectionString === undefined) {  
@@ -62,8 +64,9 @@ client = redis.createClient(connectionString, {
 });
 ```
 
-Or the connection string can be parsed and its parts sent to the connection handler, as in this Python client example.
-```
+Alternatively, the connection string can be parsed and its parts sent to the connection handler, as with the following Python client example
+
+```python
 parsed = urlparse(connection_string)
 
 r = redis.StrictRedis(
@@ -87,19 +90,11 @@ Deployments also come with a self-signed certificate so you can verify the serve
 
 ### Using the self-signed certificate
 
-1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information. 
-2. If needed, decode the Base64 string into text. 
+1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information.
+2. If needed, decode the Base64 string into text.
 3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the certificate to the driver or client.
 
 ### CLI plug-in support for the self-signed certificate
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the client.
-
-
-
-
-
-
-
- 
