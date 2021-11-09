@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019
-lastupdated: "2020-08-06"
+lastupdated: "2021-11-09"
 
 keywords: redis, databases, configs
 
@@ -21,25 +21,32 @@ subcollection: databases-for-redis
 
 In {{site.data.keyword.databases-for-redis_full}}, you can change some of the Redis configuration settings to tune your databases to your use-case. In a typical Redis setting, you can change the configuration from the command line by using [`CONFIG SET`](https://redis.io/commands/config-set). You can still use `CONFIG SET` on your deployment but the changes do NOT persist if there is a failover, node restart, or other event on your deployment. Changing the configuration with `CONFIG SET` can be used for testing, evaluation, and tuning purposes.
 
+Please note the following Redis configuration restrictions: 
+* Redis 4: to fix critical CVEs, `CONFIG` and all subcommands are no longer exposed
+* Redis 5: no restrictions
+* Redis 6 (and newer): only `CONFIG GET` and `CONFIG RESETSTAT` are exposed
+
 To make permanent changes to the database configuration, you want to use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment. 
 
 To make a change, you send a JSON object with the settings that you want to change and their new values. For example, to set the `maxmemory-policy` setting, you would supply 
-```
+```shell
 {"configuration":{"maxmemory-policy":"allkeys-lru"}}
 ```
 {: .pre}
+
 to either the CLI or to the API. 
 
 ## Using the CLI
+{: #using-cli}
 
 You can view the configuration schema of possible settings through the {{site.data.keyword.databases-for}} cli-plugin with the `cdb deployment-configuration-schema` command.
-```
+```shell
 ibmcloud cdb deployment-configuration-schema <deployment name or CRN>
 ```
 {: .pre}
 
 To change your configuration, use the `cdb deployment-configuration` command. 
-```
+```shell
 ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING]
 ```
 {: .pre}
@@ -47,6 +54,7 @@ ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSO
 The command reads the changes that you would like to make from the JSON object or a file. For more information, see the [reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration).
 
 ## Using the API
+{: #using-api}
 
 There are two deployment-configuration endpoints, one for viewing the configuration schema and one for changing the configuration. To view the configuration schema, send a `GET` request to `/deployments/{id}/configuration/schema`.
 
@@ -56,6 +64,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 
 
 ## Available Configuration settings
+{: # config-settings}
 
 To check the current value of a setting, use [`CONFIG GET`](https://redis.io/commands/config-get) from a [CLI client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client). You can check all of the settings by using `CONFIG GET *`.
 
@@ -69,4 +78,3 @@ Setting|Default|Notes
 [`maxmemory-samples`](https://redis.io/topics/lru-cache#approximated-lru-algorithm) | `5`| Tunes LRU eviction algorithm when Redis is configured as a cache.
 `stop-writes-on-bgsave-error` | `yes` | Redis stops accepting writes if it detects an unsuccessful backup snapshot. 
 {: caption="Table 1. Configuration Settings for Redis" caption-side="top"}
-
