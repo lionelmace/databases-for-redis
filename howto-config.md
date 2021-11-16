@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-16"
 
 keywords: redis, databases, configs
 
