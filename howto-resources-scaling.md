@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2019, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-30"
 
 keywords: redis, databases, scaling, manual scaling, disk I/O, memory, CPU
 
@@ -10,7 +10,7 @@ subcollection: databases-for-redis
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -23,6 +23,7 @@ subcollection: databases-for-redis
 You can manually adjust the amount of resources available to your {{site.data.keyword.databases-for-redis_full}} deployment to suit your workload and the size of your data.
 
 ## Resources Breakdown
+{: #resources-scaling-breakdown}
 
 {{site.data.keyword.databases-for-redis}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a Redis deployment is 2048 MB, which equates to an initial size of 1024 MB per member with 512 MB increments available. The minimum RAM for a Redis deployment is 2048 MB, which equates an initial allocation of 1024 MB per member with 124 MB increments available.
 
@@ -32,6 +33,7 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 When you [provision](/docs/databases-for-redis?topic=cloud-databases-provisioning#provisioning) a deployment, you can select the initial resource allocation of disk and memory. After provision, you can scale your deployment as it needs more resources.
 
 ### Disk Usage
+{: #resources-scaling-breakdown}
 
 By default, {{site.data.keyword.databases-for-redis}} uses disk for data persistence. Your disk allocation per data member has to be enough to store your data. When you add disk to the total allocation, it adds it to both members equally.
 
@@ -43,6 +45,7 @@ You cannot scale down storage. You can recover space by backing up and restoring
 {: .tip} 
 
 ### Memory
+{: #resources-scaling-memory}
 
 By default, your deployment is configured with a `noeviction` policy  so your memory resources should be scaled to fit your data set. Each data node contains a copy of your data, so the total amount of memory you use is approximately twice the size of your data set. When you add memory to the total allocation, it adds memory to both members equally.
 
@@ -51,12 +54,14 @@ Also, your deployment is configured with `maxmemory` is set to use 80% of the no
 If you [configured Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache), you can scale to the amount of memory that best fits your caching needs.
 
 ### Dedicated Cores
+{: #resources-scaling-cores}
 
 You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts.Going from a 0 to a >0 CPU count provisions and moves your deployment to new hosts, and your databases are restarted as part of that move. Going from >0 to a 0 CPU count, moves your deployment to a shared host and also restarts your databases as part of the move.
 
 ## Scaling Considerations
+{: #resources-scaling-consider}
 
-- Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+- Scaling your deployment up might cause your databases to restart. If your deployment needs to be moved to a host with more capacity then the databases are restarted as part of the move.
 
 - Scaling down RAM or CPU does not trigger database restarts.
 
@@ -69,14 +74,16 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 - If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling) on your deployment.
 
 ## Scaling in the UI
+{: #resources-scaling-ui}
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
-![The Scale Resources Panel in _Resources_](images/scaling-update.png) 
+![The Scale Resources Panel in Resources](images/scaling-update.png){: caption="Figure 1. The Scale Resources Panel in Resources" caption-side="bottom"}
 
 Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI currently uses a coarser-grained resolution than is available via the CLI or API. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
 
 ## Scaling in the CLI 
+{: #resources-scaling-cli}
 
 [{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) supports viewing and scaling the resources on your deployment. Use the command `cdb deployment-groups` to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use `cdb deployment-groups-set` command. 
 
@@ -85,7 +92,7 @@ For example, the command to view the resource groups for a deployment named "exa
 
 This produces the output:
 
-```
+```shell
 Group   member
 Count   2
 |
@@ -117,16 +124,17 @@ The `cdb deployment-groups-set` command allows either the total RAM or total dis
 `ibmcloud cdb deployment-groups-set example-deployment member --memory 4096`
 
 ## Scaling in the API
+{: #resources-scaling-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
 To view the current and scalable resources on the "example-deployment",
-```
+```curl
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups'
 ```
 
 To scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 4096 MB).
-```
+```curl
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
