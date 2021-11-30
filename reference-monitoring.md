@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-11-30"
 
 keywords: redis, monitoring, metrics, iops, disk usage, memory usage
 
@@ -9,7 +9,7 @@ subcollection: databases-for-redis
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}

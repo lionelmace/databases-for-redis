@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2019, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2021-11-30"
 
 keywords: redis, databases, ha, dr
 
@@ -10,7 +10,7 @@ subcollection: databases-for-redis
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}

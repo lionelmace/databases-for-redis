@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2018, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2021-11-30"
 
 keywords: redis, databases, soc, hipaa, gdpr, terms
 
@@ -10,7 +10,7 @@ subcollection: databases-for-redis
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}

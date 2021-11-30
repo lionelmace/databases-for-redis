@@ -1,14 +1,14 @@
 ---
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-11-30"
 
 subcollection: databases-for-redis
 
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
