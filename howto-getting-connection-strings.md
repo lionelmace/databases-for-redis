@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2021-11-30"
+lastupdated: "2022-02-03"
 
 keywords: redis, databases, connection strings
 
@@ -25,20 +25,21 @@ The {{site.data.keyword.databases-for-redis_full}} service is provisioned with a
 Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel.
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
-![Redis Connection Strings](images/connections_panel.png)
+![Redis Connection Strings](images/connections_panel.png){: caption="Figure 1. Redis Connection Strings" caption-side="bottom"}
 
 Your Redis deployment is provisioned with an admin user. You must set the admin password before you can use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) page.
 {: .tip}
 
 ## Getting Connection Strings from the CLI
+{: #connection-strings-cli}
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections).
-```
+```shell
 ibmcloud cdb deployment-connections example-deployment -u <newusername> [--endpoint-type <endpoint type>]
 ```
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named  "example-deployment", use the following command.
-```
+```shell
 ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [--endpoint-type <endpoint type>]
 ```
 
@@ -46,16 +47,20 @@ If you don't specify a user, the `deployment-connections` commands return inform
 
 To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keyword.databases-for}} plugin](/docs/databases-for-mongodb?topic=databases-cli-plugin-cdb-reference#installing-the-cloud-databases-cli-plug-in).
 {: .tip}
+
 ## Getting Connection Strings from the API
+{: #connection-strings-api}
 
 To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) endpoint. You must specify in the path which user and which type of endpoint (public or private) will be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
-```
+```shell
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/{userid}/connections/{endpoint_type}'
 ```
 
 ## Connection String Breakdown
+{: #connection-strings-breakdown}
 
 ### The Redis Section
+{: #connection-strings-redis-section}
 
 The "Redis" section contains information that is suited for your applications that make connections to Redis.
 
@@ -71,13 +76,14 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|Base64|A base64 encoded version of the certificate.
-{: caption="Table 1. `redis`/`URI` connection information" caption-side="top"}
+{: caption="Table 1. redis/URI connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 For more information on using this information to connect, see the [Connecting an External Application](/docs/databases-for-redis?topic=databases-for-redis-external-app) page.
 
 ### The CLI Section
+{: #connection-strings-cli-section}
 
 The "CLI" section contains information that is suited for command-line clients that make connections to Redis.
 
