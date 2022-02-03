@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2019, 2020
-lastupdated: "2021-11-30"
+  years: 2018, 2020
+lastupdated: "2022-02-03"
 
 keywords: redis, databases
 
@@ -22,6 +22,7 @@ subcollection: databases-for-redis
 Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-redis_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the *Endpoints* panel of your deployment's *Overview*, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 ## Connection Strings for Applications
+{: #connection-strings-application}
 
 The information a driver needs to make a connection to your deployment is in the "redis" section of your connection strings. The table contains a breakdown for reference.
 
@@ -81,6 +82,7 @@ r = redis.StrictRedis(
 Redis has a vast array of clients for applications to use. A fairly [comprehensive list is maintained on the Redis site](https://redis.io/clients). Some useful things to keep in mind when choosing a client are features that allow you to easily design your application for the cloud, like configuring [high-availability](/docs/databases-for-redis?topic=databases-for-redis-high-availability), security, and self-signed certificate support.
 
 ## TLS and self-signed certificate support
+{: #tls-cert-support}
 
 All connections to {{site.data.keyword.databases-for-redis}} are TLS 1.2 enabled, so the driver you use to connect need to be able to support TLS encryption.
 
@@ -89,12 +91,14 @@ If your driver does not support the `rediss:` protocol or TLS/SSL connections, i
 Deployments also come with a self-signed certificate so you can verify the server upon starting a connection. While not required, it is an additional security step that is recommended if your client supports it.
 
 ### Using the self-signed certificate
+{: #using-cert}
 
-1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information.
+1. Copy the certificate information from the *Endpoints* panel or the Base64 field of the connection information.
 2. If needed, decode the Base64 string into text.
 3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the certificate to the driver or client.
 
 ### CLI plug-in support for the self-signed certificate
+{: #cli-support-cert}
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the client.
