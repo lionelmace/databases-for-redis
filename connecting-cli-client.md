@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2020
-lastupdated: "2021-11-30"
+lastupdated: "2021-11-16"
 
 keywords: redis, databases, update, client
 
@@ -46,18 +46,20 @@ Field Name|Index|Description
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ## Installing `redli`
+{: #install-redli}
 
 `redli` is an open source Redis command-line client. It is stand-alone, mimics the redis-cli command-line arguments, and adds support for TLS/SSL Redis connections. It recognizes the `rediss:` protocol in URIs and  supports a `--tls` flag for non-URI connections. It can connect to TLS/SSL secured Redis without the need for tunnels. You can download and install it from the [releases page](https://github.com/IBM-Cloud/redli/releases). 
 
 ## Connecting with `redli`
+{: #connection-redli}
 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating the client connection. For example, to connect to a deployment named  "NewRedis", use the following command.
 
-```
+```shell
 ibmcloud cdb deployment-connections NewRedis --start
 ```
-Or
-```
+or
+```shell
 ibmcloud cdb cxn NewRedis -s
 ```
 
@@ -65,8 +67,8 @@ The command prompts for the admin password and then runs the `redli` command-lin
 
 If you have not installed the cloud databases plug-in, connect to your Redis databases with the `redli` command. Download and save the self-signed certificate from your deployment. Then, you can use `redli` by giving it the "composed" connection string and the path to the self-signed certificate. 
 
-```
-$ redli --uri rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0 --certfile /path/to/redis-cert.pem
+```shell
+redli --uri rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0 --certfile /path/to/redis-cert.pem
 ```
 
 There are other connection options and parameters that are supported by `redli`. For more information, see its documentation in the [`redli` GitHub repo](https://github.com/IBM-Cloud/redli).
@@ -84,6 +86,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
 `redis-cli` does not support TLS-enabled connections. If you want to use the `redis-cli` with an encrypted connection, you can set up a utility like [`stunnel`](https://www.stunnel.org/index.html), which wraps the `redis-cli` connection in TLS encryption.
 
 ### Setting up `stunnel`
+{: #setting-up-stunnel}
 
 1. Install `stunnel`. Use your package manager for Linux, Homebrew for Mac, or [download](https://www.stunnel.org/downloads.html) the appropriate package for your platform.
 
@@ -118,9 +121,4 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
     ```shell
     redis-cli -p 6830 -a <password>
     ```
-
-
-
-
-
-
+    
