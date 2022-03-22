@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-22"
 
 keywords: databases-for-redis-group release notes
 
@@ -25,3 +25,10 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-redis_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 2 October 2018
+{: #databases-for-redis-02oct2018}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-redis_full}}
+:  {{site.data.keyword.databases-for-redis_full}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/ibm-cloud-databases-for-postgresql-and-databases-for-redis-are-now-generally-available).
