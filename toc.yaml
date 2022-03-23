@@ -5,7 +5,7 @@
 toc:
   properties:
     subcollection: databases-for-redis
-    service-name: databases-for-redis-group
+    service-name: databases-for-redis
     version: 2
     category: database
     audience: service

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
-keywords: databases-for-redis-group release notes
+keywords: databases-for-redis release notes
 
 subcollection: databases-for-redis
 
