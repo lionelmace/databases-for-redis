@@ -40,6 +40,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {{site.data.keyword.databases-for-redis_full}} 5 is Available in Preview
 :  Redis 5 is now available in Preview on {{site.data.keyword.databases-for-redis_full}}. This release has lots of interesting new features, but the most important is the introduction of Redis Streams. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/databases-for-redis-5-is-available-in-preview).
 
+## 6 August 2019
+{: #databases-for-redis-06aug2019}
+{: release-note}
+
+New Regions Available for IBM Cloud Database Services
+:  {{site.data.keyword.databases-for-redis_full}} is now available to be deployed in Seoul; South Korea; and Chennai, India. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/new-regions-available-for-ibm-cloud-database-services).
+
 ## 2 October 2018
 {: #databases-for-redis-02oct2018}
 {: release-note}
