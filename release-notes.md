@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-25"
 
 keywords: databases-for-redis release notes
 
@@ -25,6 +25,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-redis_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 25 March 2022
+{: #databases-for-redis-25mar2022}
+{: release-note}
+
+{{site.data.keyword.databases-for-redis_full}} Security Goals Updated
+:  Available security and compliance goals updated. See updated goals [here](/docs/databases-for-mongodb?topic=databases-for-redis-manage-security-compliance).
 
 ## 09 November 2021
 {: #databases-for-redis-09nov2021}
