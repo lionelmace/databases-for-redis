@@ -31,7 +31,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 {{site.data.keyword.databases-for-redis_full}} Security Goals Updated
-:  Available security and compliance goals updated. See updated goals [here](/docs/databases-for-mongodb?topic=databases-for-redis-manage-security-compliance).
+:  Available security and compliance goals updated. See updated goals [here](/docs/databases-for-redis?topic=databases-for-redis-manage-security-compliance).
 
 ## 09 November 2021
 {: #databases-for-redis-09nov2021}
