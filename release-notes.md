@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-25"
+lastupdated: "2022-04-01"
 
 keywords: databases-for-redis release notes
 
@@ -39,6 +39,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 {{site.data.keyword.databases-for-redis_full}} 4.0 End of Life in May 2022
 :  After May 27, 2022, all {{site.data.keyword.databases-for-redis_full}} instances on version 4.0 that are still active will be upgraded in-place to the next major version, Redis 5.0. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022).
+
+## 30 June 2021
+{: #databases-for-redis-30jun2021}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-redis_full}} support for IBM Cloud Databases enabled by IBM Cloud Satellite.
+:  A distributed cloud provides consistent security and services across environments, centralized workload visibility, reduced latency, easier compliance and higher application development velocity. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite).
 
 ## 13 April 2020
 {: #databases-for-redis-13apr2020}
