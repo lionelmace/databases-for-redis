@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020
-lastupdated: "2021-11-30"
+  years: 2020, 2022
+lastupdated: "2022-04-28"
 
 keywords: acl, access control list, 
 
@@ -24,24 +24,28 @@ subcollection: databases-for-redis
 {{site.data.keyword.databases-for-redis_full}} deployments come with authentication enabled and use Redis's built-in access control. Redis 5.x and below only supported a single admin user. Redis 6 introduced [Access Control List (ACL) support](https://redis.io/topics/acl), so if you are able to upgrade, you should do so to take advantage of multiple users and authentication.
 
 ## The admin user
+{: #admin-user}
 
 When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given access to the admin user. If you are using Redis 5.x and below, the admin user is the only user available on your deployment. If you are using Redis 6.x and above you have the admin user and the ability to create additional users and credentials.
 
 You have to [set the admin password](/docs/databases-for-redis?topic=databases-for-redis-admin-password) in order to use it to connect to your deployment.
 
 ## Redis roles
+{: #redis-roles}
 
 The admin user and all other users on your deployment have full access to the set of redis commands, with the exception of the subcommand `configure set` - this includes the admin user.
 
-In Redis 6.x and above, any user that you create; whether through _Service Credentials_, the CLI, or API; has the same access. You cannot use Redis itself to create users or roles with access limited to specific keys or ranges of keys, as they are not propagated automatically in a cluster deployment. All other means to manage users ensure propagation across the cluster.
+In Redis 6.x and above, any user that you create; whether through _Service Credentials_, the CLI, API, or directly in Redis; have the same access. You cannot use Redis itself to create users or roles with access limited to specific keys or ranges of keys, as they are not propagated automatically in a cluster deployment. All other means to manage users ensure propagation across the cluster.
 
 ## Additional Users - Redis 6.x only
+{: #add-users}
 
 Access to your {{site.data.keyword.databases-for-redis}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints. 
 
 ### Creating Users From _Service Credentials_
+{: #create-users-service-cred}
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -53,18 +57,20 @@ All users on your deployment can use the connection strings, including connectio
 The new credentials appear in the table, and the connection strings are available as JSON in a click-to-copy field under _View Credentials_.
 
 ### Creating Users From the Command Line
+{: #create-users-cli}
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli?topic=cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
-```
+```shell
 ibmcloud cdb user-create example-deployment <newusername> <newpassword>
 ```
 
 Once the task has finished, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
 
 ### Creating Users from the API
+{: #create-users-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
-```
+```shell
 curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
@@ -74,6 +80,7 @@ curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
 To retrieve a user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint.
 
 ## Internal-use Users - Redis 6.x only
+{: #internal-users}
 
 There are four reserved users on your deployment. Modifying these users will cause your deployment to become unstable or unusable.
 - `ibm` - An internal admin user used for managing the deployment and exposing metrics.
@@ -81,6 +88,5 @@ There are four reserved users on your deployment. Modifying these users will cau
 - `sentinel-user` - The user account for sentinels to handle monitoring and failovers.
 - `admin` - The default user provided to access your deployment.
 
-{: note}
 Starting with Redis 6.x, IBM Cloud Databases for Redis disables the default user. Instead, to stay in sync with the new ACL support, every deployment gets a dedicated admin user for full support of ACLs. Newly provisioned users via the UI, API, or CLI will adhere to this pattern, as well. If your drivers don't support ACL at this point in time, we recommend using Redis 5 and switching to Redis 6 once your drivers are ready to support ACL.
 {: note}
