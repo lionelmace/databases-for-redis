@@ -1,7 +1,9 @@
 ---
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-16"
+  years: 2018, 2022
+lastupdated: "2022-05-13"
+
+keywords: redis
 
 subcollection: databases-for-redis
 
