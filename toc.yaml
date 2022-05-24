@@ -69,6 +69,7 @@ toc:
           topics: 
           - /cloud-databases/cloud-databases-tutorial-getting-started
           - /cloud-databases/cloud-databases-tutorial-k8s-app
+          - /cloud-databases/cloud-databases-truck-tracker-ibmcloud
       - topicgroup: 
           label: Logging and monitoring
           topics: 
