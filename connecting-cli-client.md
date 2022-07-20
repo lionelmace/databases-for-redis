@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2020
-lastupdated: "2021-11-16"
+  years: 2017, 2022
+lastupdated: "2022-07-20"
 
 keywords: redis, databases, update, client
 
@@ -32,15 +32,15 @@ Connection strings are displayed in the _Endpoints_ panel of your deployment's _
 
 The information the clients need to make a connection to your deployment is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `redli`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings and uses `Arguments` as command-line parameters.
-`Environment`||A list of key/values you set as environment variables.
-`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|Name|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
+| Field Name|Index|Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `redli`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings and uses `Arguments` as command-line parameters. |
+| `Environment` | | A list of key/values you set as environment variables. |
+| `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`. |
 {: caption="Table 1. `redis`/`cli` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
@@ -55,11 +55,11 @@ Field Name|Index|Description
 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating the client connection. For example, to connect to a deployment named  "NewRedis", use the following command.
 
-```shell
+```sh
 ibmcloud cdb deployment-connections NewRedis --start
 ```
 or
-```shell
+```sh
 ibmcloud cdb cxn NewRedis -s
 ```
 
@@ -67,7 +67,7 @@ The command prompts for the admin password and then runs the `redli` command-lin
 
 If you have not installed the cloud databases plug-in, connect to your Redis databases with the `redli` command. Download and save the self-signed certificate from your deployment. Then, you can use `redli` by giving it the "composed" connection string and the path to the self-signed certificate. 
 
-```shell
+```sh
 redli --uri rediss://admin:$PASSWORD@e6b2c3f8-54a6-439e-8d8a-aa6c4a78df49.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32371/0 --certfile /path/to/redis-cert.pem
 ```
 
@@ -102,7 +102,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
     - The host name and port to connect to. (`connect=`portal972-7.bmix-lon-yp-38898e17-ff6f-4340-9da8-2ba24c41e6d8.composeci-us-ibm-com.composedb.com:24370`)
     - The path to the certificate.
     
-    ```shell
+    ```sh
     [redis-cli]
     client=yes  
     accept=127.0.0.1:6830  
@@ -118,7 +118,7 @@ If you do choose to use `redis-cli`, there are some extra configuration steps. I
     
 5. In a new terminal window, run `redis-cli` pointing to the local host and port, and authenticate with the deployment's credentials.
 
-    ```shell
+    ```sh
     redis-cli -p 6830 -a <password>
     ```
     
