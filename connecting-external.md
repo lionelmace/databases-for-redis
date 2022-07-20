@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2020
-lastupdated: "2022-02-03"
+  years: 2018, 2022
+lastupdated: "2022-07-20"
 
 keywords: redis, databases
 
@@ -26,18 +26,18 @@ Your applications and drivers use connection strings to make a connection to {{s
 
 The information a driver needs to make a connection to your deployment is in the "redis" section of your connection strings. The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for Redis, it is "URI"
-`Scheme`||Scheme for a URI - for Redis, it is "rediss"
-`Path`||Path for a URI - for Redis, it is the database number
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to
-`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|Base64|A base64 encoded version of the certificate.
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Type` | | Type of connection - for Redis, it is "URI" |
+| `Scheme` | | Scheme for a URI - for Redis, it is "rediss" |
+| `Path` | | Path for a URI - for Redis, it is the database number |
+| `Authentication` | `Username` | The username that you use to connect. |
+| `Authentication` | `Password` | A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to |
+| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | Base64 | A base64 encoded version of the certificate. |
 {: caption="Table 1. redis/URI connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
