@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019
-lastupdated: "2021-11-30"
+  years: 2019, 2022
+lastupdated: "2022-07-20"
 
 keywords: redis, databases, configs
 
@@ -21,7 +21,7 @@ subcollection: databases-for-redis
 
 In {{site.data.keyword.databases-for-redis_full}}, you can change some of the Redis configuration settings to tune your databases to your use-case. In a typical Redis setting, you can change the configuration from the command line by using [`CONFIG SET`](https://redis.io/commands/config-set). You can still use `CONFIG SET` on your deployment but the changes do NOT persist if there is a failover, node restart, or other event on your deployment. Changing the configuration with `CONFIG SET` can be used for testing, evaluation, and tuning purposes.
 
-Please note the following Redis configuration restrictions: 
+Note the following Redis configuration restrictions: 
 * Redis 4:  `CONFIG` and all subcommands are deprecated and will no longer work on or after 11/30/2021
 * Redis 5: no restrictions
 * Redis 6 (and newer): only `CONFIG GET` and `CONFIG RESETSTAT` are exposed
@@ -29,7 +29,7 @@ Please note the following Redis configuration restrictions:
 To make permanent changes to the database configuration, you want to use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment. 
 
 To make a change, you send a JSON object with the settings that you want to change and their new values. For example, to set the `maxmemory-policy` setting, you would supply 
-```shell
+```sh
 {"configuration":{"maxmemory-policy":"allkeys-lru"}}
 ```
 {: .pre}
@@ -40,13 +40,13 @@ to either the CLI or to the API.
 {: #using-cli}
 
 You can view the configuration schema of possible settings through the {{site.data.keyword.databases-for}} cli-plugin with the `cdb deployment-configuration-schema` command.
-```shell
+```sh
 ibmcloud cdb deployment-configuration-schema <deployment name or CRN>
 ```
 {: .pre}
 
 To change your configuration, use the `cdb deployment-configuration` command. 
-```shell
+```sh
 ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING]
 ```
 {: .pre}
@@ -70,11 +70,11 @@ To check the current value of a setting, use [`CONFIG GET`](https://redis.io/com
 
 Many of the settings are used to configure Redis as a cache. For more information, see the [Configuring Redis as a Cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache) page.
 
-Setting|Default|Notes
-----------|-----|-----------
-[`maxmemory`](https://redis.io/topics/memory-optimization#memory-allocation) | 80% of your deployment's memory | Determines the amount of data you can store in Redis.
-[`appendonly`](https://redis.io/topics/persistence#append-only-file)| `yes` | Enables or Disables Redis persistence.
-[`maxmemory-policy`](https://redis.io/topics/lru-cache#eviction-policies) |`noeviction` | Determines eviction behavior when `maxmemory` limit is reached.
-[`maxmemory-samples`](https://redis.io/topics/lru-cache#approximated-lru-algorithm) | `5`| Tunes LRU eviction algorithm when Redis is configured as a cache.
-`stop-writes-on-bgsave-error` | `yes` | Redis stops accepting writes if it detects an unsuccessful backup snapshot. 
+| Setting | Default | Notes | 
+| ---------- | ----- | ----------- | 
+| [`maxmemory`](https://redis.io/topics/memory-optimization#memory-allocation) | 80% of your deployment's memory | Determines the amount of data you can store in Redis. | 
+| [`appendonly`](https://redis.io/topics/persistence#append-only-file)| `yes` | Enables or Disables Redis persistence. | 
+| [`maxmemory-policy`](https://redis.io/topics/lru-cache#eviction-policies) |`noeviction` | Determines eviction behavior when `maxmemory` limit is reached. | 
+| [`maxmemory-samples`](https://redis.io/topics/lru-cache#approximated-lru-algorithm) | `5`| Tunes LRU eviction algorithm when Redis is configured as a cache. | 
+| `stop-writes-on-bgsave-error` | `yes` | Redis stops accepting writes if it detects an unsuccessful backup snapshot.  | 
 {: caption="Table 1. Configuration Settings for Redis" caption-side="top"}
