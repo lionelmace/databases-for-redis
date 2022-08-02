@@ -126,4 +126,4 @@ To ensure the stability of your applications and your database, see
 - [High-Availability](/docs/databases-for-redis?topic=databases-for-redis-high-availability)
 - [Performance](/docs/databases-for-redis?topic=databases-for-redis-performance)
 
-For more information on migrating your existing data to {{site.data.keyword.databases-for-redis}}, [A How-To for Migrating Redis to IBM Cloud Databases for Redis](https://www.ibm.com/cloud/blog/a-how-to-for-migrating-redis-to-ibm-cloud-databases-for-redis). 
+For more information on migrating your existing data to {{site.data.keyword.databases-for-redis}}, see [A How-To for Migrating Redis to IBM Cloud Databases for Redis](https://www.ibm.com/cloud/blog/a-how-to-for-migrating-redis-to-ibm-cloud-databases-for-redis). 
