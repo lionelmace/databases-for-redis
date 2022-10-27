@@ -38,7 +38,6 @@ toc:
           - /cloud-databases/cloud-databases-satellite-aws
           - /cloud-databases/cloud-databases-satellite-on-prem
       - /cloud-databases/cloud-databases-provisioning
-      - /cloud-databases/cloud-databases-cbr
       - howto-admin-password.md
       - howto-getting-connection-strings.md
       - howto-user-management.md
@@ -85,6 +84,8 @@ toc:
           topics: 
           - learn-security-compliance.md
           - manage-scc.md
+          - /cloud-databases/cloud-databases-cbr
+          - /cloud-databases/cloud-databases-cbr-tutorial
   - navgroup: 
       id: help
       topics:

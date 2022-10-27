@@ -32,7 +32,7 @@ Deploying and Connecting a Cloud Databases Instance Tutorial
 {: release-note}
 
 Protecting {{site.data.keyword.databases-for-redis_full}} resources with context-based restrictions
-:  Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/databases-for-redis?topic=cloud-databases-cbr).
+:  Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/databases-for-redis?topic=cloud-databases-cbr&interface=ui).
 
 ## 25 March 2022
 {: #databases-for-redis-25mar2022}
