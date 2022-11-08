@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-11-08"
 
 keywords: redis, getting started redis, deploy redis, redli
 
@@ -115,6 +115,8 @@ The Redis documentation has an introduction to the many Redis data types, with e
 
 ## Next Steps
 {: #redis-next-steps}
+
+For information on best practices, check out [Best Practices for Redis on the IBM Cloud](https://www.ibm.com/cloud/blog/best-practices-for-redis-on-the-ibm-cloud){: .external}.
 
 If you are using Redis for the first time, see the [official Redis documentation](https://redis.io/documentation){: .external}. 
 
