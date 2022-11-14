@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-11-14"
 
 keywords: redis, databases, connection strings
 
@@ -16,6 +16,7 @@ subcollection: databases-for-redis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting Connection Strings
 {: #connection-strings}
@@ -32,6 +33,7 @@ Your Redis deployment is provisioned with an admin user. You must set the admin 
 
 ## Getting Connection Strings from the CLI
 {: #connection-strings-cli}
+{: cli}
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections).
 ```sh
@@ -50,6 +52,7 @@ To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keywor
 
 ## Getting Connection Strings from the API
 {: #connection-strings-api}
+{: api}
 
 To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) endpoint. You must specify in the path which user and which type of endpoint (public or private) will be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
 ```sh
@@ -80,7 +83,7 @@ The "Redis" section contains information that is suited for your applications th
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information to connect, see the [Connecting an External Application](/docs/databases-for-redis?topic=databases-for-redis-external-app) page.
+For more information, see [Connecting an External Application](/docs/databases-for-redis?topic=databases-for-redis-external-app) page.
 
 ### The CLI Section
 {: #connection-strings-cli-section}
@@ -100,4 +103,4 @@ The "CLI" section contains information that is suited for command-line clients t
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-For more information on using this information, see the [Connecting with a command line client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page.
+For more information, see [Connecting with a command line client](/docs/databases-for-redis?topic=databases-for-redis-connecting-cli-client) page.
