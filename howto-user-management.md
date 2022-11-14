@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-11-14"
 
 keywords: acl, access control list, 
 
@@ -16,6 +16,7 @@ subcollection: databases-for-redis
 {:note: .note}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing Users and Roles
@@ -44,8 +45,9 @@ Access to your {{site.data.keyword.databases-for-redis}} deployment is not limit
 
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints. 
 
-### Creating Users From _Service Credentials_
+### Creating Users From the _Service Credentials_ UI
 {: #create-users-service-cred}
+{: ui}
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -58,9 +60,10 @@ The new credentials appear in the table, and the connection strings are availabl
 
 ### Creating Users From the Command Line
 {: #create-users-cli}
+{: cli}
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli?topic=cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
-```shell
+```sh
 ibmcloud cdb user-create example-deployment <newusername> <newpassword>
 ```
 
@@ -68,9 +71,10 @@ Once the task has finished, you can retrieve the new user's connection strings w
 
 ### Creating Users from the API
 {: #create-users-api}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
-```shell
+```sh
 curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
