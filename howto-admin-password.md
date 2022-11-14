@@ -21,7 +21,7 @@ subcollection: databases-for-redis
 # Setting the Admin Password
 {: #admin-password}
 
-# Setting the Admin Password in the UI
+## Setting the Admin Password in the UI
 {: #admin-password-ui}
 {: ui}
 
