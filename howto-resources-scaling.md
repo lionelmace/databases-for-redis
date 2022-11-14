@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-30"
+  years: 2019, 2022
+lastupdated: "2022-11-30"
 
 keywords: redis, databases, scaling, manual scaling, disk I/O, memory, CPU
 
@@ -75,6 +75,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 ## Scaling in the UI
 {: #resources-scaling-ui}
+{: ui}
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
@@ -84,6 +85,7 @@ Adjust the slider to increase or decrease the resources that are allocated to yo
 
 ## Scaling in the CLI 
 {: #resources-scaling-cli}
+{: cli}
 
 [{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) supports viewing and scaling the resources on your deployment. Use the command `cdb deployment-groups` to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use `cdb deployment-groups-set` command. 
 
@@ -92,7 +94,7 @@ For example, the command to view the resource groups for a deployment named "exa
 
 This produces the output:
 
-```shell
+```sh
 Group   member
 Count   2
 |
@@ -125,16 +127,17 @@ The `cdb deployment-groups-set` command allows either the total RAM or total dis
 
 ## Scaling in the API
 {: #resources-scaling-api}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
 To view the current and scalable resources on the "example-deployment",
-```curl
+```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups'
 ```
 
 To scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 4096 MB).
-```curl
+```sh
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
 -H "Authorization: Bearer $APIKEY" \
 -H "Content-Type: application/json" \
@@ -144,4 +147,4 @@ curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{
     }'
 ```
 
-More information is in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
+For more information, see [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
