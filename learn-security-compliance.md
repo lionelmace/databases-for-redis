@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-03-06"
 
 keywords: redis, databases, soc, hipaa, gdpr, terms
 
@@ -10,11 +10,7 @@ subcollection: databases-for-redis
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Security and Compliance
 {: #security-compliance}
@@ -25,19 +21,19 @@ subcollection: databases-for-redis
 {{site.data.keyword.databases-for-redis_full}} use the following methods to protect data in transit or in storage.
 
 - All {{site.data.keyword.databases-for-redis}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.
-- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/databases-for-redis?topic=cloud-databases-iam).
+- Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/databases-for-redis?topic=databases-for-redis-iam).
 - Access to the database is secured through the standard access controls provided by the database. These access controls are configured to require valid database-level credentials that are obtainable only through prior access to the database or through our Management Console UI or API.
-- All {{site.data.keyword.databases-for-redis}} storage is provided on storage encrypted with LUKS using AES-256. The default keys are managed by [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect Integration](/docs/databases-for-redis?topic=cloud-databases-key-protect).
-- IP allowlisting - All deployments support [allowlisting IP addresses](/docs/databases-for-redis?topic=cloud-databases-allowlisting) to restrict access to the service.
-- Public and Private Networking - {{site.data.keyword.databases-for-redis}} is integrated with [Service Endpoints](/docs/databases-for-redis?topic=cloud-databases-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
-- Dedicated Cores - Allocating dedicated cores to your deployment introduces hypervisor-level isolation to your database instance, using isolated virtual machines to ensure your data processing remains separated from other customers. It also provides a guaranteed minimum amount of CPUs to your deployment. Deployments with dedicated cores in the same Resource Group and {{site.data.keyword.cloud_notm}} Region may share a virtual machine.
+- All {{site.data.keyword.databases-for-redis}} storage is provided on storage encrypted with LUKS using AES-256. The default keys are managed by [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect Integration](/docs/databases-for-redis?topic=databases-for-redis-key-protect&interface=ui).
+- IP allowlisting - All deployments support [allowlisting IP addresses](/docs/databases-for-redis?topic=databases-for-redis-allowlisting&interface=ui) to restrict access to the service.
+- Public and Private Networking - {{site.data.keyword.databases-for-redis}} is integrated with [Service Endpoints](/docs/databases-for-redis?topic=databases-for-redis-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
+- Dedicated Cores - Allocating dedicated cores to your deployment introduces hypervisor-level isolation to your database instance, using isolated virtual machines to ensure your data processing remains separated from other customers. It also provides a guaranteed minimum number of CPUs to your deployment. Deployments with dedicated cores in the same Resource Group and {{site.data.keyword.cloud_notm}} Region may share a virtual machine.
 
 ## Data Resilience
 {: #data-resilience}
 
-- [Backups](/docs/databases-for-redis?topic=cloud-databases-dashboard-backups) for your deployment are included, unless you [configure Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache). The {{site.data.keyword.databases-for-redis}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
+- [Backups](/docs/databases-for-redis?topic=databases-for-redis-dashboard-overview&interface=ui#dashboard-overview-backups) for your deployment are included, unless you [configure Redis as a cache](/docs/databases-for-redis?topic=databases-for-redis-redis-cache). The {{site.data.keyword.databases-for-redis}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 - All {{site.data.keyword.databases-for-redis}} deployments are configured with replication to provide both data resilience and [high-availability](/docs/databases-for-redis?topic=databases-for-redis-high-availability). Deployments contain a cluster with two data members in a primary/replica configuration and state is managed with a quorum of three [Redis sentinels](https://redis.io/topics/sentinel).
-- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
+- If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations.
  
 ## SOC 2 Type 2 Certification
@@ -50,7 +46,7 @@ You can request an SOC 2 Type 2 report from the customer portal or contact your 
 ## ISO 27017, ISO 27018
 {: #iso}
 
-{{site.data.keyword.databases-for-redis}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services defined in [ISO 27017](https://www.iso.org/standard/43757.html) and [ISO 27018](https://www.iso.org/standard/76559.html).
+{{site.data.keyword.databases-for-redis}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services that are defined in [ISO 27017](https://www.iso.org/standard/43757.html) and [ISO 27018](https://www.iso.org/standard/76559.html).
 
 ## General Data Protection Regulation (GDPR) 
 {: #gdpr}
